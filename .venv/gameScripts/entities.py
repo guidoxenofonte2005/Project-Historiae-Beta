@@ -9,6 +9,8 @@ class PhysicsEntity:
         self.velocity = [0, 0]
         self.collisions : dict = {"up" : False, "down" : False, "right" : False, "left" : False}
 
+        self.animation_offset : tuple = (-9, -16)
+
         self.flip = False
 
     def rect(self) -> pygame.Rect:
@@ -54,7 +56,7 @@ class PhysicsEntity:
         
     def render(self, surface : pygame.Surface, offset = (0, 0)):
         # surface.blit(pygame.transform.flip(self.animation.image(), self.flip, False), (self.pos[0] - offset[0] + self.animation_offset[0], self.pos[1] - offset[1] + self.animation_offset[1]))
-        surface.blit(self.game.assets['player'], (self.position[0] - offset[0], self.position[1] - offset[1]))
+        surface.blit(self.game.assets['player'], (self.position[0] - offset[0] + self.animation_offset[0], self.position[1] - offset[1] + self.animation_offset[1]))
 
 
 class NPC(PhysicsEntity):

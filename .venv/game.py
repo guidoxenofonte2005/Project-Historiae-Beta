@@ -29,7 +29,7 @@ class Game:
         self.tilemap = Tilemap(self, 32)
         self.tilemap.load('.venv/maps/map.json')
 
-        self.Player = Player(self, 'player', (50, 50), (32, 64))
+        self.Player = Player(self, 'player', (50, 50), (14, 48))
         self.test = pygame.Rect(self.Player.position[0], self.Player.position[1], self.Player.size[0], self.Player.size[1])
 
         self.movement = [False, False]
