@@ -1,4 +1,5 @@
 import sys
+import time
 import pygame
 
 from gameScripts.utils import *
@@ -8,10 +9,10 @@ from gameScripts.tilemap import Tilemap
 class Game:
     def __init__(self) -> None:
         pygame.init()
+    
+        self.screen : pygame.Surface = pygame.display.set_mode((640, 360), flags = pygame.RESIZABLE)
 
-        self.screen : pygame.Surface = pygame.display.set_mode((640, 360), pygame.RESIZABLE)
-
-        self.display = pygame.Surface((640, 360))
+        self.display = pygame.Surface((480, 270))
 
         self.movement : tuple[bool] = [False, False]
 
@@ -29,7 +30,7 @@ class Game:
         self.tilemap = Tilemap(self, 32)
         self.tilemap.load('.venv/maps/map.json')
 
-        self.Player = Player(self, 'player', (50, 50), (14, 48))
+        self.Player = Player(self, 'player', (50, 110), (14, 48))
         self.test = pygame.Rect(self.Player.position[0], self.Player.position[1], self.Player.size[0], self.Player.size[1])
 
         self.movement = [False, False]
@@ -38,26 +39,43 @@ class Game:
 
     def run(self):
         while True:
-            self.screen.fill((28, 138, 217))
+            self.display.fill((28, 138, 217))
 
             self.scroll[0] += (self.Player.rect().centerx - self.display.get_width() / 2 - self.scroll[0]) / 20
             self.scroll[1] += (self.Player.rect().centery - self.display.get_height() / 2 - self.scroll[1]) / 15
             renderScroll = (int(self.scroll[0]), int(self.scroll[1]))
 
-            self.tilemap.render(self.screen, offset = renderScroll)
+            self.tilemap.render(self.display, offset = renderScroll)
 
-            self.test = pygame.Rect(self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1], self.Player.size[0], self.Player.size[1])
-            pygame.draw.rect(self.screen, (255, 255, 255), self.test)
             self.Player.update(self.tilemap, (self.movement[1] - self.movement[0], 0))
-            self.Player.render(self.screen, offset=renderScroll)
+            self.Player.render(self.display, offset=renderScroll)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    match event.key:
+                        case pygame.K_LEFT:
+                            self.movement[0] = True
+                        case pygame.K_RIGHT:
+                            self.movement[1] = True
+                        case pygame.K_SPACE:
+                            self.Player.jump()
+                if event.type == pygame.KEYUP:
+                    match event.key:
+                        case pygame.K_LEFT:
+                            self.movement[0] = False
+                        case pygame.K_RIGHT:
+                            self.movement[1] = False
             
+            self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
             pygame.display.update()
             self.clock.tick(60)
+
+            print(self.tilemap.tiles_around(self.Player.position))
+            print(self.tilemap.physics_rects_around(self.Player.position))
+            # time.sleep(0.1)
 
 Game().run()
 

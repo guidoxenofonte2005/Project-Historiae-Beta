@@ -17,7 +17,7 @@ import pygame
 #     tuple(sorted([(0, 1)])) : 1
 # }
 
-NEIGHBOR_OFFSETS = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (0, 0), (-1, 1), (0, 1), (1, 1)]
+NEIGHBOR_OFFSETS = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (0, 0), (-1, 1), (0, 1), (1, 1), (0, 2), (2, 0), (0, -2), (-2, 0)]
 PHYSICS_TILES = {'marble', }
 # AUTOTILE_TYPES = {'grass', 'stone'}
 
@@ -36,7 +36,7 @@ class Tilemap:
                 if not keep:
                     self.offgrid_tiles.remove(tile)
 
-        for location in self.tilemap:
+        for location in self.tilemap.copy():
             tile = self.tilemap[location]
             if (tile['type'], tile['variant']) in id_pairs:
                 matches.append(tile.copy())
@@ -48,10 +48,10 @@ class Tilemap:
 
         return matches
     
-    def tiles_around(self, position) -> list:
+    def tiles_around(self, position, e_offset = (0, 0)) -> list:
         tiles : list = []
 
-        tile_location = (int(position[0] // self.tile_size), int(position[1] // self.tile_size))
+        tile_location = (int((position[0] + e_offset[0]) // self.tile_size) , int((position[1] + e_offset[1]) // self.tile_size))
         
         for offset in NEIGHBOR_OFFSETS:
             check_location : str = str(tile_location[0] + offset[0]) + ';' + str(tile_location[1] + offset[1])
@@ -73,10 +73,10 @@ class Tilemap:
     #         if (tile['type'] in AUTOTILE_TYPES) and (neighbours in AUTOTILE_MAP):
     #             tile['variant'] = AUTOTILE_MAP[neighbours]
     
-    def physics_rects_around(self, position) -> list:
+    def physics_rects_around(self, position, offset = (0, 0)) -> list:
         rects : list = []
 
-        for tile in self.tiles_around(position):
+        for tile in self.tiles_around(position, offset):
             if tile['type'] in PHYSICS_TILES:
                 rects.append(pygame.Rect(tile['pos'][0] * self.tile_size, tile['pos'][1] * self.tile_size, self.tile_size, self.tile_size))
 

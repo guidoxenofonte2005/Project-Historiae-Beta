@@ -22,7 +22,7 @@ class PhysicsEntity:
 
         self.position[0] += frame_movement[0]
         entity_rect = self.rect()
-        for rect in tilemap.physics_rects_around(self.position):
+        for rect in tilemap.physics_rects_around(self.position, self.animation_offset):
             if entity_rect.colliderect(rect):
                 if frame_movement[0] > 0:
                     entity_rect.right = rect.left
@@ -68,3 +68,6 @@ class Player(PhysicsEntity):
 
     def update(self, tilemap, movement=(0, 0)):
         super().update(tilemap, movement)
+
+    def jump(self):
+        self.velocity[1] -= 3
