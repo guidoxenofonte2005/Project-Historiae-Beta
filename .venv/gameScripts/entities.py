@@ -70,4 +70,4 @@ class Player(PhysicsEntity):
         super().update(tilemap, movement)
 
     def jump(self):
-        self.velocity[1] -= 3
+        self.velocity[1] = -3

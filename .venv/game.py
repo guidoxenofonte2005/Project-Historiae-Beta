@@ -62,6 +62,8 @@ class Game:
                             self.movement[1] = True
                         case pygame.K_SPACE:
                             self.Player.jump()
+                        case pygame.K_F11:
+                            pygame.display.toggle_fullscreen()
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:
