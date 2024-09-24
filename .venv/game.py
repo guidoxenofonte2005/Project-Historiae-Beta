@@ -38,9 +38,8 @@ class Game:
 
         self.scroll = [0, 0]
 
-
-        self.testInteractableObject = InteractiveObject(position = (10, 170))
-        self.testIcon : pygame.Surface = pygame.image.load('.venv/images/teste.png')
+        self.testCat = InteractiveObject((10, 245), radius = 40)
+        self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
 
     def run(self):
         while True:
@@ -55,9 +54,9 @@ class Game:
             self.Player.update(self.tilemap, (self.movement[1] - self.movement[0], 0))
             self.Player.render(self.display, offset=renderScroll)
 
-            self.testInteractableObject.checkCollision(self.Player)
+            self.testCat.checkCollision(self.Player)
             
-            # self.display.blit(self.testIcon, (self.testInteractableObject.position[0] - self.scroll[0] - self.testInteractableObject.radius, self.testInteractableObject.position[1] - self.scroll[1] - self.testInteractableObject.radius))
+            self.display.blit(self.testCatSpr, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

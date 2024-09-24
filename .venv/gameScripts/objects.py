@@ -3,9 +3,9 @@ import pygame, math
 from gameScripts import entities
 
 class InteractiveObject:
-    def __init__(self, position) -> None:
+    def __init__(self, position, radius: int) -> None:
         self.position = position
-        self.radius : int = 35
+        self.radius : int = radius
         self.rect = pygame.Rect(position[0] - self.radius, position[1] - self.radius, self.radius, self.radius)
         self.interactable : bool = False
 
@@ -15,5 +15,6 @@ class InteractiveObject:
         else:
             self.interactable = False
 
-    def interact():
-        pass
+    def interact(self):
+        if self.interactable:
+            pass
