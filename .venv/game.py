@@ -37,6 +37,8 @@ class Game:
         self.movement = [False, False]
 
         self.scroll = [0, 0]
+        
+        self.textFont = pygame.font.SysFont("smwwholepixelspacingregular", 20)
 
         self.testCat = InteractiveObject((10, 245), radius = 40)
         self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
