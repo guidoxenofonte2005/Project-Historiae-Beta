@@ -1,8 +1,8 @@
 import sys
 import pygame
 
-from utils import load_images
-from tilemap import Tilemap
+from gameScripts.utils import load_images
+from gameScripts.tilemap import Tilemap
 
 RENDER_SCALE = 1.0
 
@@ -24,10 +24,10 @@ class Editor:
         }
 
         self.tileMap = Tilemap(self, tileSize=32)
-
+        
 
         try:
-            self.tileMap.load('.venv/maps/mapDEBUG.json')
+            self.tileMap.load('.venv/maps/map.json')
         except FileNotFoundError:
             pass
 
