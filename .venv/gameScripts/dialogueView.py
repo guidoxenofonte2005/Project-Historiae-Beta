@@ -1,4 +1,3 @@
-
 # classe pra lidar com diálogos
 class DialogueView:
     def __init__(self, lines, npc, dialogueBoxSprite = None) -> None:

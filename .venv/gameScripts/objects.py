@@ -9,12 +9,14 @@ class InteractiveObject:
         self.rect = pygame.Rect(position[0] - self.radius, position[1] - self.radius, self.radius, self.radius)
         self.interactable : bool = False
 
+        self.button = pygame.image.load(".venv/images/interactButton.png")
+
     def checkCollision(self, player : entities.Player):
         if self.rect.colliderect(player.rect()):
             self.interactable = True
         else:
             self.interactable = False
 
-    def interact(self):
+    def interact(self, surface : pygame.Surface, coords):
         if self.interactable:
-            pass
+            surface.blit()
