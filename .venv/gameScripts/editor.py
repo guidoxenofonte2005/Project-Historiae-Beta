@@ -72,7 +72,7 @@ class Editor:
                 if tile_location in self.tileMap.tilemap:
                     del self.tileMap.tilemap[tile_location]
                 for tile in self.tileMap.offgrid_tiles.copy():
-                    tile_image = self.assets[tile['type']][tile['variant']]
+                    tile_image = self.assets[tile['type']]
                     tile_hitbox = pygame.Rect(tile['pos'][0] - self.scroll[0], tile['pos'][1] - self.scroll[1], tile_image.get_width(), tile_image.get_height())
                     if tile_hitbox.collidepoint(mouse_position):
                         self.tileMap.offgrid_tiles.remove(tile)

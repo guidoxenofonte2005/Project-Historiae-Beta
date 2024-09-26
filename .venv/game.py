@@ -56,7 +56,7 @@ class Game:
             self.Player.update(self.tilemap, (self.movement[1] - self.movement[0], 0))
             self.Player.render(self.display, offset=renderScroll)
 
-            self.testCat.checkCollision(self.Player)
+            self.testCat.checkCollision(self.Player, self.display, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
             
             self.display.blit(self.testCatSpr, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
 
