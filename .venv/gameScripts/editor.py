@@ -119,7 +119,7 @@ class Editor:
                         case pygame.K_s:
                             self.movement[3] = True
                         case pygame.K_o:
-                            self.tileMap.save('.venv/maps/map.json')
+                            self.tileMap.save('.venv/maps/mapDEBUG.json')
                         case pygame.K_t:
                             self.tileMap.autotile()
                         case pygame.K_g:

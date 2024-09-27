@@ -23,7 +23,7 @@ class Game:
 
         self.assets : dict = {
             'player' : load_image('characters/satyr_test.png'),
-            'marble' : load_image('tiles/floor_shit.png'),
+            'marble' : load_images('tiles'),
         }
 
         self.clock = pygame.time.Clock()
@@ -72,8 +72,8 @@ class Game:
                             self.movement[1] = True
                         case pygame.K_SPACE:
                             self.Player.jump()
-                        case pygame.K_F11:
-                            pygame.display.toggle_fullscreen()
+                        # case pygame.K_f:
+                        #     pygame.display.toggle_fullscreen()
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:

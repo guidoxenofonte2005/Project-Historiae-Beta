@@ -95,7 +95,7 @@ class Tilemap:
         # versão não otimizada do código de renderização
         for location in self.tilemap:
             tile = self.tilemap[location]
-            destination.blit(self.game.assets[tile['type']], (tile['pos'][0] * self.tile_size - offset[0], tile['pos'][1] * self.tile_size - offset[1]))
+            destination.blit(self.game.assets[tile['type']][tile['variant']], (tile['pos'][0] * self.tile_size - offset[0], tile['pos'][1] * self.tile_size - offset[1]))
 
     def save(self, path):
         f = open(path, 'w')
