@@ -1,4 +1,4 @@
-><span style="color: #f36f22; font-family: smw; font-size: 2em;">Project Historiae</span>
+><span style="color: #f36f22; font-size: 2em;">Project Historiae</span>
 
 ### Currently available:
 - Basic movement
