@@ -40,7 +40,7 @@ class Game:
         
         self.textFont = pygame.font.SysFont("smwwholepixelspacingregular", 20)
 
-        self.testCat = InteractiveObject((10, 245), radius = 40)
+        self.testCat = InteractiveObject((10, 245), 40, ["dialogue"])
         self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
 
     def run(self):
@@ -72,8 +72,8 @@ class Game:
                             self.movement[1] = True
                         case pygame.K_SPACE:
                             self.Player.jump()
-                        # case pygame.K_f:
-                        #     pygame.display.toggle_fullscreen()
+                        case pygame.K_a:
+                            self.testCat.interact(self.display)
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:
