@@ -22,7 +22,7 @@ class Game:
         pygame.display.set_caption('Project Historiae - Beta')
 
         self.assets : dict = {
-            'player' : load_image('characters/satyr_test.png'),
+            'player' : load_image('characters/satyr/satyr.png'),
             'marble' : load_images('tiles'),
         }
 
