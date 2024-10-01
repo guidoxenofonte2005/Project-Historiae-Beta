@@ -1,9 +1,10 @@
 import pygame, math
 
 from gameScripts import entities
+from gameScripts.dialogueView import DialogueView
 
 class InteractiveObject:
-    def __init__(self, position, radius: int, possibleActions : list) -> None:
+    def __init__(self, position, radius: int, possibleActions : list[str]) -> None:
         self.possibleActions = possibleActions
         self.position = position
         self.radius : int = radius
@@ -19,6 +20,14 @@ class InteractiveObject:
         else:
             self.interactable = False
 
-    def interact(self, surface : pygame.Surface, action : str = "dialogue"):
-        if action in self.possibleActions:
-            print("Player interagiu com o objeto")
+    def interact(self, action : str = "dialogue", dialogueFile : str = ".venv/dialogues/debugDialogue.txt"):
+        if self.interactable:
+            if action in self.possibleActions:
+                if action == "dialogue":
+                    file = open(dialogueFile, "r")
+                    DialogueView(file.read(), "debugCat").update()
+                    file.close()
+                elif action == "get":
+                    pass
+                else:
+                    print("\033[31mInvalid action\033[m")

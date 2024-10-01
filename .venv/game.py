@@ -37,10 +37,8 @@ class Game:
         self.movement = [False, False]
 
         self.scroll = [0, 0]
-        
-        self.textFont = pygame.font.SysFont("smwwholepixelspacingregular", 20)
 
-        self.testCat = InteractiveObject((10, 245), 40, ["dialogue"])
+        self.testCat = InteractiveObject((10, 245), 40, ["dialogue", "get"])
         self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
 
     def run(self):
@@ -73,7 +71,7 @@ class Game:
                         case pygame.K_SPACE:
                             self.Player.jump()
                         case pygame.K_a:
-                            self.testCat.interact(self.display)
+                            self.testCat.interact()
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:
