@@ -7,6 +7,8 @@ from gameScripts.entities import Player
 from gameScripts.tilemap import Tilemap
 from gameScripts.objects import InteractiveObject
 
+from gameScripts.dialogueView import DialogueView
+
 class Game:
     def __init__(self) -> None:
         pygame.init()
@@ -38,6 +40,8 @@ class Game:
 
         self.scroll = [0, 0]
 
+        self.dialogueBox = DialogueView("hallo", None)
+
         self.testCat = InteractiveObject((10, 245), 40, ["dialogue", "get"])
         self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
 
@@ -52,6 +56,8 @@ class Game:
             self.tilemap.render(self.display, offset = renderScroll)
 
             self.Player.update(self.tilemap, (self.movement[1] - self.movement[0], 0))
+
+            # pygame.draw.rect(self.display, 'white', pygame.Rect(self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1], self.Player.size[0], self.Player.size[1]))
             self.Player.render(self.display, offset=renderScroll)
 
             self.testCat.checkCollision(self.Player, self.display, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
@@ -71,37 +77,16 @@ class Game:
                         case pygame.K_SPACE:
                             self.Player.jump()
                         case pygame.K_a:
-                            self.testCat.interact()
+                            self.dialogueBox.update(self.display, (self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1]))
+                            # self.testCat.interact(self.display, renderScroll, self.dialogueBox)
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:
                             self.movement[0] = False
                         case pygame.K_RIGHT:
                             self.movement[1] = False
-            
             self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
             pygame.display.update()
             self.clock.tick(60)
 
-            # print("")
-            # print(self.testInteractableObject.position)
-            # print(self.Player.position)
-            # print(self.Player.rect().center)
-            # print(self.Player.position)
-            # print(self.tilemap.tiles_around(self.Player.position))
-            # print(self.tilemap.physics_rects_around(self.Player.position))
-            # time.sleep(0.1)
-
 Game().run()
-
-# pygame.init()
-# pygame.display.set_mode((640, 360))
-
-# running : bool = True
-
-# while running:
-#     for event in pygame.event.get():
-#         if event.type == pygame.QUIT:
-#             running = False
-
-# pygame.quit()

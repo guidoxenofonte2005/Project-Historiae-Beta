@@ -20,12 +20,13 @@ class InteractiveObject:
         else:
             self.interactable = False
 
-    def interact(self, action : str = "dialogue", dialogueFile : str = ".venv/dialogues/debugDialogue.txt"):
+    def interact(self, surface : pygame.Surface, offset : tuple, dialogueView : DialogueView, action : str = "dialogue", dialogueFile : str = ".venv/dialogues/debugDialogue.txt"):
         if self.interactable:
             if action in self.possibleActions:
                 if action == "dialogue":
                     file = open(dialogueFile, "r")
-                    DialogueView(file.read(), "debugCat").update()
+                    dialogueView.lines = file.read()
+                    dialogueView.update(surface, offset)
                     file.close()
                 elif action == "get":
                     pass
