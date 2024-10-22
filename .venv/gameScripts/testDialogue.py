@@ -4,7 +4,7 @@ pygame.init()
 font = pygame.font.SysFont('Monocraft', 24)
 screen = pygame.display.set_mode((800, 500))
 timer = pygame.time.Clock()
-message = "Uma mensagem muito grande e legal que só serve de teste e nada além disso"
+message = "Uma mensagem muito grande e legal :D"
 snip = font.render('', True, 'white')
 counter = 0
 speed = 3

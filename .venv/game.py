@@ -24,7 +24,7 @@ class Game:
         pygame.display.set_caption('Project Historiae - Beta')
 
         self.assets : dict = {
-            'player' : load_image('characters/satyr/idle/satyr.png'),
+            'player' : load_image('characters/filip/idle/main.png'),
             'marble' : load_images('tiles'),
         }
 
@@ -74,11 +74,11 @@ class Game:
                             self.movement[0] = True
                         case pygame.K_RIGHT:
                             self.movement[1] = True
-                        case pygame.K_SPACE:
-                            self.Player.jump()
+                        # case pygame.K_SPACE:
+                        #     self.Player.jump()
                         case pygame.K_a:
-                            self.dialogueBox.update(self.display, (self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1]))
-                            # self.testCat.interact(self.display, renderScroll, self.dialogueBox)
+                            # self.dialogueBox.update(self.display, (self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1]))
+                            self.testCat.interact(self.display, renderScroll, self.dialogueBox)
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:

@@ -69,5 +69,5 @@ class Player(PhysicsEntity):
     def update(self, tilemap, movement=(0, 0)):
         super().update(tilemap, movement)
 
-    def jump(self):
-        self.velocity[1] = -3
+    # def jump(self):
+    #     self.velocity[1] = -3
