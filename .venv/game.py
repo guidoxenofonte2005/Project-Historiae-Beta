@@ -1,6 +1,7 @@
 import sys
 import time
 import pygame
+import pygame_gui
 
 from gameScripts.utils import *
 from gameScripts.entities import Player
@@ -14,6 +15,8 @@ class Game:
         pygame.init()
     
         self.screen : pygame.Surface = pygame.display.set_mode((640, 360), flags = pygame.RESIZABLE)
+
+        self.guiManager = pygame_gui.UIManager([640, 360])
 
         self.display = pygame.Surface((320, 180))
 
@@ -40,7 +43,7 @@ class Game:
 
         self.scroll = [0, 0]
 
-        self.dialogueBox = DialogueView("hallo", None)
+        self.dialogueBox = DialogueView(None, '')
 
         self.testCat = InteractiveObject((10, 245), 40, ["dialogue", "get"])
         self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
@@ -60,7 +63,7 @@ class Game:
             # pygame.draw.rect(self.display, 'white', pygame.Rect(self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1], self.Player.size[0], self.Player.size[1]))
             self.Player.render(self.display, offset=renderScroll)
 
-            self.testCat.checkCollision(self.Player, self.display, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
+            self.dialogueBox.drawable = self.testCat.checkCollision(self.Player, self.display, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
             
             self.display.blit(self.testCatSpr, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
 
@@ -85,6 +88,10 @@ class Game:
                             self.movement[0] = False
                         case pygame.K_RIGHT:
                             self.movement[1] = False
+
+            if self.dialogueBox.drawable:
+                self.dialogueBox.draw(self.display)
+
             self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
             pygame.display.update()
             self.clock.tick(60)

@@ -19,14 +19,16 @@ class InteractiveObject:
             surface.blit(self.button, [coords[0] + 4, coords[1] - 20])
         else:
             self.interactable = False
+        return self.interactable
 
     def interact(self, surface : pygame.Surface, offset : tuple, dialogueView : DialogueView, action : str = "dialogue", dialogueFile : str = ".venv/dialogues/debugDialogue.txt"):
         if self.interactable:
             if action in self.possibleActions:
+                self.interactable = False
                 if action == "dialogue":
                     file = open(dialogueFile, "r")
                     dialogueView.lines = file.read()
-                    dialogueView.update(surface, offset)
+                    dialogueView.draw(surface)
                     file.close()
                 elif action == "get":
                     pass
