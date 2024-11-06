@@ -24,6 +24,8 @@ class DialogueView:
 
         self.dialogueFile = ''
 
+        self.currentLine : str = '1'
+
     def printText(self, text : str, surface : pygame.Surface, charOffset : tuple):
         counter : int = 0
         speed : int = 3
@@ -40,11 +42,13 @@ class DialogueView:
             self.printText(line, surface, offset)
         print("Player interagiu com esse objeto")
 
-    def draw(self, surface : pygame.Surface, player):
+    def draw(self, surface : pygame.Surface, player, uiManager):
         if self.lines != "":
             player.movable = False
             with open('.venv/dialogues/debugDialogue.json', 'r') as file:
-                tempLines = json.load(file)
-            print(tempLines)
-        self.textFont.render_to(surface, self.textRect.topleft, self.lines, (255, 255, 255), (231, 15, 150))
+                btnsQtd = len(json.load(file)['debugCat'][self.currentLine]) - 1
+            self.textFont.render_to(surface, self.textRect.topleft, self.lines, (255, 255, 255), (231, 15, 150))
+
+            for i in range(btnsQtd):
+                pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), 'debug', uiManager)
         # surface.blit(img, surface.get_rect(center=(surface.get_width() // 2, surface.get_height() // 2)))

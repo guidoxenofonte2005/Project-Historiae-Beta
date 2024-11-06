@@ -14,7 +14,7 @@ class Game:
     def __init__(self) -> None:
         pygame.init()
     
-        self.screen : pygame.Surface = pygame.display.set_mode((640, 360), flags = pygame.RESIZABLE)
+        self.screen : pygame.Surface = pygame.display.set_mode((0, 0), flags = pygame.RESIZABLE)
 
         self.guiManager = pygame_gui.UIManager([640, 360])
 
@@ -97,9 +97,9 @@ class Game:
             self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
 
             if self.dialogueBox.drawable:
-                self.dialogueBox.draw(self.screen, self.Player)
-            
-            self.guiManager.draw_ui(self.screen)
+                self.dialogueBox.draw(self.screen, self.Player, self.guiManager)
+
+                self.guiManager.draw_ui(self.screen)
 
             pygame.display.update()
 
