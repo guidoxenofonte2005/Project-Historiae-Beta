@@ -28,10 +28,6 @@ class InteractiveObject:
             if action in self.possibleActions:
                 self.interactable = False
                 if action == "dialogue":
-                    # file = open(dialogueFile, "r")
-                    # dialogueView.lines = file.read()
-                    # dialogueView.draw(surface)
-                    # file.close()
                     with open(".venv/dialogues/debugDialogue.json", 'r') as file:
                         tempLines = json.load(file)
                     dialogueView.lines = tempLines[self.name]['1']["Dialogue"]

@@ -14,7 +14,7 @@ class Game:
     def __init__(self) -> None:
         pygame.init()
     
-        self.screen : pygame.Surface = pygame.display.set_mode((0, 0), flags = pygame.RESIZABLE)
+        self.screen : pygame.Surface = pygame.display.set_mode((640, 360), flags = pygame.RESIZABLE)
 
         self.guiManager = pygame_gui.UIManager([640, 360])
 

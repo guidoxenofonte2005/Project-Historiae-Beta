@@ -55,8 +55,8 @@ class PhysicsEntity:
             self.velocity[1] = 0
         
     def render(self, surface : pygame.Surface, offset = (0, 0)):
-        # surface.blit(pygame.transform.flip(self.animation.image(), self.flip, False), (self.pos[0] - offset[0] + self.animation_offset[0], self.pos[1] - offset[1] + self.animation_offset[1]))
-        surface.blit(self.game.assets['player'], (self.position[0] - offset[0] + self.animation_offset[0], self.position[1] - offset[1] + self.animation_offset[1]))
+        surface.blit(pygame.transform.flip(self.game.assets['player'], self.flip, False), (self.position[0] - offset[0] + self.animation_offset[0], self.position[1] - offset[1] + self.animation_offset[1]))
+        # surface.blit(self.game.assets['player'], (self.position[0] - offset[0] + self.animation_offset[0], self.position[1] - offset[1] + self.animation_offset[1]))
 
 
 class NPC(PhysicsEntity):
