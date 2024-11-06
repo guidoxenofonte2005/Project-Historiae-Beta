@@ -43,6 +43,8 @@ class DialogueView:
     def draw(self, surface : pygame.Surface, player):
         if self.lines != "":
             player.movable = False
-            buttons = json.load(open(self.dialogueFile, 'r'))
+            with open('.venv/dialogues/debugDialogue.json', 'r') as file:
+                tempLines = json.load(file)
+            print(tempLines)
         self.textFont.render_to(surface, self.textRect.topleft, self.lines, (255, 255, 255), (231, 15, 150))
         # surface.blit(img, surface.get_rect(center=(surface.get_width() // 2, surface.get_height() // 2)))
