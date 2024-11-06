@@ -65,9 +65,47 @@ class NPC(PhysicsEntity):
 class Player(PhysicsEntity):
     def __init__(self, game, entityType, position, size) -> None:
         super().__init__(game, entityType, position, size)
+        self.movable = True
 
     def update(self, tilemap, movement=(0, 0)):
-        super().update(tilemap, movement)
+        self.collisions = {"up" : False, "down" : False, "right" : False, "left" : False}
+        frame_movement = (movement[0] + self.velocity[0], movement[1] + self.velocity[1])
+
+        if self.movable:
+            self.position[0] += frame_movement[0]
+            entity_rect = self.rect()
+            for rect in tilemap.physics_rects_around(self.position, self.animation_offset):
+                if entity_rect.colliderect(rect):
+                    if frame_movement[0] > 0:
+                        entity_rect.right = rect.left
+                        self.collisions["right"] = True
+                    if frame_movement[0] < 0:
+                        entity_rect.left = rect.right
+                        self.collisions["left"] = True
+                    self.position[0] = entity_rect.x
+
+        if self.movable:
+            self.position[1] += frame_movement[1]
+            entity_rect = self.rect()
+            for rect in tilemap.physics_rects_around(self.position):
+                if entity_rect.colliderect(rect):
+                    if frame_movement[1] > 0:
+                        entity_rect.bottom = rect.top
+                        self.collisions["down"] = True
+                    if frame_movement[1] < 0:
+                        entity_rect.top = rect.bottom
+                        self.collisions["up"] = True
+                    self.position[1] = entity_rect.y
+
+        if movement[0] > 0:
+            self.flip = False
+        elif movement[0] < 0:
+            self.flip = True
+
+        self.velocity[1] = min(5, self.velocity[1] + 0.1)
+
+        if self.collisions["down"] or self.collisions["up"]:
+            self.velocity[1] = 0
 
     # def jump(self):
     #     self.velocity[1] = -3

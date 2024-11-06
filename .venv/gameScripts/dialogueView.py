@@ -1,6 +1,9 @@
 import pygame
 import time
+import pygame.freetype
 import pygame_gui
+
+import json
 # classe pra lidar com diálogos
 # ainda falta pensar em como isso funcionaria
 class DialogueView:
@@ -10,9 +13,16 @@ class DialogueView:
         else:
             self.lines = lines
         self.npc = npc
-        self.textFont = pygame.font.SysFont("Arial", 20)
+        self.textFont = pygame.freetype.SysFont("Monocraft", 24)
+
+        if type(self.lines) == list:
+            self.textRect = self.textFont.get_rect(self.lines[0])
+        else:
+            self.textRect = self.textFont.get_rect(self.lines)
 
         self.drawable : bool = False
+
+        self.dialogueFile = ''
 
     def printText(self, text : str, surface : pygame.Surface, charOffset : tuple):
         counter : int = 0
@@ -30,6 +40,9 @@ class DialogueView:
             self.printText(line, surface, offset)
         print("Player interagiu com esse objeto")
 
-    def draw(self, surface : pygame.Surface):
-        img = self.textFont.render(self.lines, True, (0,0,0))
-        surface.blit(img, surface.get_rect(center=(surface.get_width() // 2, surface.get_height() // 2)))
+    def draw(self, surface : pygame.Surface, player):
+        if self.lines != "":
+            player.movable = False
+            buttons = json.load(open(self.dialogueFile, 'r'))
+        self.textFont.render_to(surface, self.textRect.topleft, self.lines, (255, 255, 255), (231, 15, 150))
+        # surface.blit(img, surface.get_rect(center=(surface.get_width() // 2, surface.get_height() // 2)))

@@ -1,10 +1,12 @@
 import pygame, math
+import json
 
 from gameScripts import entities
 from gameScripts.dialogueView import DialogueView
 
 class InteractiveObject:
-    def __init__(self, position, radius: int, possibleActions : list[str]) -> None:
+    def __init__(self, position, radius: int, possibleActions : list[str], name : str = "debugCat") -> None:
+        self.name = name
         self.possibleActions = possibleActions
         self.position = position
         self.radius : int = radius
@@ -26,10 +28,15 @@ class InteractiveObject:
             if action in self.possibleActions:
                 self.interactable = False
                 if action == "dialogue":
-                    file = open(dialogueFile, "r")
-                    dialogueView.lines = file.read()
-                    dialogueView.draw(surface)
-                    file.close()
+                    # file = open(dialogueFile, "r")
+                    # dialogueView.lines = file.read()
+                    # dialogueView.draw(surface)
+                    # file.close()
+                    with open(".venv/dialogues/debugDialogue.json", 'r') as file:
+                        tempLines = json.load(file)
+                    dialogueView.lines = tempLines[self.name]['1']["Dialogue"]
+                    dialogueView.dialogueFile = dialogueFile
+                    pass
                 elif action == "get":
                     pass
                 else:

@@ -1,0 +1,15 @@
+{
+    "debugCat": {
+        "1" : {
+            "Dialogue" : "Hello stranger... nice to meet you",
+            "1" : "Nice to see you too",
+            "2" : "F#@! off"
+        },
+        "2.1" : {
+            "Dialogue" : ":D"
+        },
+        "2.2" : {
+            "Dialogue" : "Rude"
+        }
+    }
+}

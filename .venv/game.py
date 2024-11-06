@@ -50,6 +50,7 @@ class Game:
 
     def run(self):
         while True:
+            time_delta = self.clock.tick(60)/1000.0
             self.display.fill((28, 138, 217))
 
             self.scroll[0] += (self.Player.rect().centerx - self.display.get_width() / 2 - self.scroll[0]) / 20
@@ -89,11 +90,17 @@ class Game:
                         case pygame.K_RIGHT:
                             self.movement[1] = False
 
-            if self.dialogueBox.drawable:
-                self.dialogueBox.draw(self.display)
+                self.guiManager.process_events(event)
+            
+            self.guiManager.update(time_delta)
 
             self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
+
+            if self.dialogueBox.drawable:
+                self.dialogueBox.draw(self.screen, self.Player)
+            
+            self.guiManager.draw_ui(self.screen)
+
             pygame.display.update()
-            self.clock.tick(60)
 
 Game().run()
