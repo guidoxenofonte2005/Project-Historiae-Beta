@@ -89,8 +89,6 @@ class Game:
                         case pygame.K_RIGHT:
                             if self.currentPhase != 'interacting':
                                 self.movement[1] = True
-                        # case pygame.K_SPACE:
-                        #     self.Player.jump()
                         case pygame.K_a:
                             # self.dialogueBox.update(self.display, (self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1]))
                             self.currentPhase = self.testCat.interact(self.display, renderScroll, self.dialogueBox, phase=self.currentPhase)

@@ -42,7 +42,7 @@ class DialogueView:
             if not displayedButtons:
                 if btnsQtd != 0:
                     for i in range(btnsQtd):
-                        displayedButtons[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), f'debug{i}', uiManager, object_id=str(i+1))
+                        displayedButtons[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), tempArq['debugCat'][str(self.currentLine)][str(i+1)], uiManager, object_id=str(i+1)) if (len(tempArq['debugCat']) == 1 or self.currentLine == 1) else pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), tempArq['debugCat'][str(self.currentLine)+'.'+str(self.variant)][str(i+1)], uiManager, object_id=str(i+1))
                         print(displayedButtons)
                 else:
                     displayedButtons[f'btn1'] = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55, 100, 50), f'Exit', uiManager, object_id=str(1))
