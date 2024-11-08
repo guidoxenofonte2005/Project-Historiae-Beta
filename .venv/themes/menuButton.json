@@ -1,0 +1,11 @@
+{
+    "button" : {
+        "normal_bg": "#0000FF",
+        "hovered_bg": "#00FF00",
+        "disabled_bg": "#777777",
+        "font": "Arial",
+        "font_size": 18,
+        "border_width": 2,
+        "border_colour": "#FFFFFF" 
+    }
+}
