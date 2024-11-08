@@ -24,17 +24,48 @@ class DialogueView:
 
         self.dialogueFile = ''
 
-        self.currentLine : str = '1'
+        self.currentLine : int = 1
+        self.variant : int = None
 
-    def draw(self, surface : pygame.Surface, player, uiManager, displayedButtons : list):
+    def draw(self, surface : pygame.Surface, player, uiManager, displayedButtons : dict):
         if self.lines != "":
             player.movable = False
             with open('.venv/dialogues/debugDialogue.json', 'r') as file:
-                btnsQtd = len(json.load(file)['debugCat'][self.currentLine]) - 1
+                tempArq = json.load(file)
+                if len(tempArq['debugCat']) == 1 or self.currentLine == 1:
+                    btnsQtd = len(tempArq['debugCat'][str(self.currentLine)]) - 1
+                else:
+                    btnsQtd = len(tempArq['debugCat'][str(self.currentLine)+'.'+str(self.variant)]) - 1
+                    # btnsQtd = len(tempArq['debugCat'][str(self.currentLine)]) - 1
             self.textFont.render_to(surface, self.textRect.topleft, self.lines, (255, 255, 255), (231, 15, 150))
 
             if not displayedButtons:
-                for i in range(btnsQtd):
-                    btn = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), 'debug', uiManager, )
-                    displayedButtons.append(btn)
+                if btnsQtd != 0:
+                    for i in range(btnsQtd):
+                        displayedButtons[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), f'debug{i}', uiManager, object_id=str(i+1))
+                        print(displayedButtons)
+                else:
+                    displayedButtons[f'btn1'] = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55, 100, 50), f'Exit', uiManager, object_id=str(1))
         # surface.blit(img, surface.get_rect(center=(surface.get_width() // 2, surface.get_height() // 2)))
+    
+    def updateLines(self, btnId : int, displayedButtons : dict):
+        with open('.venv/dialogues/debugDialogue.json', 'r') as file:
+            tempArq = json.load(file)
+        try:
+            self.currentLine += 1
+            self.variant = btnId
+            self.lines = tempArq['debugCat'][str(self.currentLine)+'.'+str(self.variant)]['Dialogue']
+        except KeyError:
+            self.drawable = False
+            self.currentLine = 1
+            self.variant = None
+            self.lines = ''
+            for key in list(displayedButtons.keys()):
+                displayedButtons[key].kill()
+                del displayedButtons[key]
+            return 'normal'
+
+        for key in list(displayedButtons.keys()):
+            displayedButtons[key].kill()
+            del displayedButtons[key]
+        return 'interacting'

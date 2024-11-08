@@ -44,10 +44,12 @@ class Game:
         self.scroll = [0, 0]
 
         self.dialogueBox = DialogueView(None, '')
-        self.buttonsOnScreen : list = []
+        self.buttonsOnScreen : dict = {}
 
         self.testCat = InteractiveObject((10, 245), 40, ["dialogue", "get"])
         self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
+
+        self.currentPhase : str = 'normal'
 
     def run(self):
         while True:
@@ -57,6 +59,12 @@ class Game:
             self.scroll[0] += (self.Player.rect().centerx - self.display.get_width() / 2 - self.scroll[0]) / 20
             self.scroll[1] += (self.Player.rect().centery - self.display.get_height() / 1.6 - self.scroll[1]) / 15
             renderScroll = (int(self.scroll[0]), int(self.scroll[1]))
+
+            match self.currentPhase:
+                case 'interacting':
+                    self.Player.movable = False
+                case 'normal':
+                    self.Player.movable = True
 
             self.tilemap.render(self.display, offset = renderScroll)
 
@@ -76,16 +84,16 @@ class Game:
                 if event.type == pygame.KEYDOWN:
                     match event.key:
                         case pygame.K_LEFT:
-                            if not self.dialogueBox.drawable:
+                            if self.currentPhase != 'interacting':
                                 self.movement[0] = True
                         case pygame.K_RIGHT:
-                            if not self.dialogueBox.drawable:
+                            if self.currentPhase != 'interacting':
                                 self.movement[1] = True
                         # case pygame.K_SPACE:
                         #     self.Player.jump()
                         case pygame.K_a:
                             # self.dialogueBox.update(self.display, (self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1]))
-                            self.testCat.interact(self.display, renderScroll, self.dialogueBox)
+                            self.currentPhase = self.testCat.interact(self.display, renderScroll, self.dialogueBox, phase=self.currentPhase)
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:
@@ -93,8 +101,10 @@ class Game:
                         case pygame.K_RIGHT:
                             self.movement[1] = False
                 if event.type == pygame_gui.UI_BUTTON_PRESSED:
-                    if event.ui_element in self.buttonsOnScreen:
-                        print(self.buttonsOnScreen)
+                    for label, btn in self.buttonsOnScreen.copy().items():
+                        if event.ui_element == btn:
+                            # print(int(label[-1]))
+                            self.currentPhase = self.dialogueBox.updateLines(int(label[-1]), self.buttonsOnScreen)
 
                 self.guiManager.process_events(event)
             

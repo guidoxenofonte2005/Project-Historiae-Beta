@@ -23,7 +23,7 @@ class InteractiveObject:
             self.interactable = False
         return self.interactable
 
-    def interact(self, surface : pygame.Surface, offset : tuple, dialogueView : DialogueView, action : str = "dialogue", dialogueFile : str = ".venv/dialogues/debugDialogue.txt"):
+    def interact(self, surface : pygame.Surface, offset : tuple, dialogueView : DialogueView, phase : str, action : str = "dialogue", dialogueFile : str = ".venv/dialogues/debugDialogue.txt"):
         if self.interactable:
             if action in self.possibleActions:
                 self.interactable = False
@@ -32,8 +32,9 @@ class InteractiveObject:
                         tempLines = json.load(file)
                     dialogueView.lines = tempLines[self.name]['1']["Dialogue"]
                     dialogueView.dialogueFile = dialogueFile
-                    pass
                 elif action == "get":
                     pass
                 else:
                     print("\033[31mInvalid action\033[m")
+            return 'interacting'
+        return 'normal'
