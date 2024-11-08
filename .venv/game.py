@@ -44,6 +44,7 @@ class Game:
         self.scroll = [0, 0]
 
         self.dialogueBox = DialogueView(None, '')
+        self.buttonsOnScreen : list = []
 
         self.testCat = InteractiveObject((10, 245), 40, ["dialogue", "get"])
         self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
@@ -75,9 +76,11 @@ class Game:
                 if event.type == pygame.KEYDOWN:
                     match event.key:
                         case pygame.K_LEFT:
-                            self.movement[0] = True
+                            if not self.dialogueBox.drawable:
+                                self.movement[0] = True
                         case pygame.K_RIGHT:
-                            self.movement[1] = True
+                            if not self.dialogueBox.drawable:
+                                self.movement[1] = True
                         # case pygame.K_SPACE:
                         #     self.Player.jump()
                         case pygame.K_a:
@@ -89,6 +92,9 @@ class Game:
                             self.movement[0] = False
                         case pygame.K_RIGHT:
                             self.movement[1] = False
+                if event.type == pygame_gui.UI_BUTTON_PRESSED:
+                    if event.ui_element in self.buttonsOnScreen:
+                        print(self.buttonsOnScreen)
 
                 self.guiManager.process_events(event)
             
@@ -97,7 +103,7 @@ class Game:
             self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
 
             if self.dialogueBox.drawable:
-                self.dialogueBox.draw(self.screen, self.Player, self.guiManager)
+                self.dialogueBox.draw(self.screen, self.Player, self.guiManager, self.buttonsOnScreen)
 
                 self.guiManager.draw_ui(self.screen)
 

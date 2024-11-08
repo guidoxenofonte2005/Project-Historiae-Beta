@@ -26,13 +26,15 @@ class DialogueView:
 
         self.currentLine : str = '1'
 
-    def draw(self, surface : pygame.Surface, player, uiManager):
+    def draw(self, surface : pygame.Surface, player, uiManager, displayedButtons : list):
         if self.lines != "":
             player.movable = False
             with open('.venv/dialogues/debugDialogue.json', 'r') as file:
                 btnsQtd = len(json.load(file)['debugCat'][self.currentLine]) - 1
             self.textFont.render_to(surface, self.textRect.topleft, self.lines, (255, 255, 255), (231, 15, 150))
 
-            for i in range(btnsQtd):
-                pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), 'debug', uiManager)
+            if not displayedButtons:
+                for i in range(btnsQtd):
+                    btn = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), 'debug', uiManager, )
+                    displayedButtons.append(btn)
         # surface.blit(img, surface.get_rect(center=(surface.get_width() // 2, surface.get_height() // 2)))
