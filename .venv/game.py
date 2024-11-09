@@ -28,7 +28,9 @@ class Game:
 
         self.assets : dict = {
             'player/idle' : Animation(load_images('characters/filip/idle'), 18),
-            # 'player/walk' : Animation(load_images('characters/filip/walk'), 4),
+            'player/walk' : Animation(load_images('characters/filip/idle'), 14), # trocar isso
+            'debugCat' : Animation(load_images('animals/cat1'), 8),
+            'debugCat2' : Animation(load_images('animals/cat2'), 8),
             'marble' : load_images('tiles'),
         }
 
@@ -46,9 +48,13 @@ class Game:
 
         self.dialogueBox = DialogueView(None, '')
         self.buttonsOnScreen : dict = {}
+        
+        # self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
 
-        self.testCat = InteractiveObject((10, 245), 40, ["dialogue", "get"])
-        self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
+        self.interactableObjects = [
+            InteractiveObject((10, 245), 37, ["dialogue"], self, 'debugCat'),
+            InterativeObject()
+        ]
 
         self.currentPhase : str = 'normal'
 
@@ -74,9 +80,18 @@ class Game:
             # pygame.draw.rect(self.display, 'white', pygame.Rect(self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1], self.Player.size[0], self.Player.size[1]))
             self.Player.render(self.display, offset=renderScroll)
 
-            self.dialogueBox.drawable = self.testCat.checkCollision(self.Player, self.display, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
+            for i in range(len(self.interactableObjects)):
+                self.dialogueBox.drawable = True if self.interactableObjects[i].checkCollision(self.Player, self.display, (self.interactableObjects[i].position[0] - self.scroll[0] - self.interactableObjects[i].radius, self.interactableObjects[i].position[1] - self.scroll[1] - self.interactableObjects[i].radius)) else False
+                if self.dialogueBox.drawable:
+                    break
             
-            self.display.blit(self.testCatSpr, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
+            # self.dialogueBox.drawable = self.testCat.checkCollision(self.Player, self.display, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
+            
+            # self.display.blit(self.testCatSpr, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
+            
+            for i in range(len(self.interactableObjects)):
+                self.interactableObjects[i].render(self.display, offset=renderScroll)
+                self.interactableObjects[i].animation.update()
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -92,7 +107,8 @@ class Game:
                                 self.movement[1] = True
                         case pygame.K_a:
                             # self.dialogueBox.update(self.display, (self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1]))
-                            self.currentPhase = self.testCat.interact(self.display, renderScroll, self.dialogueBox, phase=self.currentPhase)
+                            for i in range(len(self.interactableObjects)):
+                                self.currentPhase = self.interactableObjects[i].interact(self.display, renderScroll, self.dialogueBox, phase=self.currentPhase)
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:

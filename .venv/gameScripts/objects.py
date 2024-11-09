@@ -5,7 +5,7 @@ from gameScripts import entities
 from gameScripts.dialogueView import DialogueView
 
 class InteractiveObject:
-    def __init__(self, position, radius: int, possibleActions : list[str], name : str = "debugCat") -> None:
+    def __init__(self, position, radius: int, possibleActions : list[str], game, name : str = "debugCat") -> None:
         self.name = name
         self.possibleActions = possibleActions
         self.position = position
@@ -14,6 +14,8 @@ class InteractiveObject:
         self.interactable : bool = False
 
         self.button = pygame.image.load(".venv/images/interactButton.png")
+
+        self.animation = game.assets[name].copy()
 
     def checkCollision(self, player : entities.Player, surface : pygame.Surface, coords):
         if self.rect.colliderect(player.rect()):
@@ -38,3 +40,6 @@ class InteractiveObject:
                     print("\033[31mInvalid action\033[m")
             return 'interacting'
         return 'normal'
+    
+    def render(self, surface : pygame.Surface, offset : tuple):
+        surface.blit(pygame.transform.flip(self.animation.image(), False, False), (self.position[0] - offset[0] - self.radius, self.position[1] - offset[1] - self.radius))
