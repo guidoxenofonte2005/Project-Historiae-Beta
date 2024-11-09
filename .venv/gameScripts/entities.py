@@ -13,8 +13,16 @@ class PhysicsEntity:
 
         self.flip = False
 
+        self.action = ''
+        self.setAction('idle')
+
     def rect(self) -> pygame.Rect:
         return pygame.Rect(self.position[0], self.position[1], self.size[0], self.size[1])
+
+    def setAction(self, action : str = 'idle'):
+        if action != self.action:
+            self.action = action
+            self.animation = self.game.assets[self.type + '/' + self.action].copy()
     
     def update(self, tilemap, movement = (0, 0)):
         self.collisions = {"up" : False, "down" : False, "right" : False, "left" : False}
@@ -55,12 +63,8 @@ class PhysicsEntity:
             self.velocity[1] = 0
         
     def render(self, surface : pygame.Surface, offset = (0, 0)):
-        surface.blit(pygame.transform.flip(self.game.assets['player'], self.flip, False), (self.position[0] - offset[0] + self.animation_offset[0], self.position[1] - offset[1] + self.animation_offset[1]))
+        surface.blit(pygame.transform.flip(self.animation.image(), self.flip, False), (self.position[0] - offset[0] + self.animation_offset[0], self.position[1] - offset[1] + self.animation_offset[1]))
         # surface.blit(self.game.assets['player'], (self.position[0] - offset[0] + self.animation_offset[0], self.position[1] - offset[1] + self.animation_offset[1]))
-
-
-class NPC(PhysicsEntity):
-    pass
 
 class Player(PhysicsEntity):
     def __init__(self, game, entityType, position, size) -> None:
@@ -106,6 +110,13 @@ class Player(PhysicsEntity):
 
         if self.collisions["down"] or self.collisions["up"]:
             self.velocity[1] = 0
+        
+        self.animation.update()
+
+        if movement[0] != 0:
+            self.setAction('walk')
+        else:
+            self.setAction('idle')
 
     # def jump(self):
     #     self.velocity[1] = -3

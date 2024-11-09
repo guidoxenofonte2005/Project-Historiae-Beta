@@ -27,7 +27,8 @@ class Game:
         pygame.display.set_caption('Project Historiae - Beta')
 
         self.assets : dict = {
-            'player' : load_image('characters/filip/idle/main.png'),
+            'player/idle' : Animation(load_images('characters/filip/idle'), 18),
+            # 'player/walk' : Animation(load_images('characters/filip/walk'), 4),
             'marble' : load_images('tiles'),
         }
 
