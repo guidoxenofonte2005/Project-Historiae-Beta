@@ -11,5 +11,10 @@
         "2.2" : {
             "Dialogue" : "Rude"
         }
+    },
+    "debugCat2" : {
+        "1" : {
+            "Dialogue" : "You look dumb"
+        }
     }
 }

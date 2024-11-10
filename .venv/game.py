@@ -30,7 +30,7 @@ class Game:
             'player/idle' : Animation(load_images('characters/filip/idle'), 18),
             'player/walk' : Animation(load_images('characters/filip/idle'), 14), # trocar isso
             'debugCat' : Animation(load_images('animals/cat1'), 8),
-            'debugCat2' : Animation(load_images('animals/cat2'), 8),
+            'debugCat2' : Animation(load_images('animals/cat2')),
             'marble' : load_images('tiles'),
         }
 
@@ -46,14 +46,15 @@ class Game:
 
         self.scroll = [0, 0]
 
-        self.dialogueBox = DialogueView(None, '')
+        self.dialogueBox = DialogueView('')
         self.buttonsOnScreen : dict = {}
         
         # self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
 
         self.interactableObjects = [
             InteractiveObject((10, 245), 37, ["dialogue"], self, 'debugCat'),
-            InterativeObject()
+            InteractiveObject((80, 245), 41, ["dialogue"], self, 'debugCat2'),
+
         ]
 
         self.currentPhase : str = 'normal'
@@ -108,7 +109,10 @@ class Game:
                         case pygame.K_a:
                             # self.dialogueBox.update(self.display, (self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1]))
                             for i in range(len(self.interactableObjects)):
+                                lastPhase = self.currentPhase
                                 self.currentPhase = self.interactableObjects[i].interact(self.display, renderScroll, self.dialogueBox, phase=self.currentPhase)
+                                if self.currentPhase != lastPhase:
+                                    break
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:
