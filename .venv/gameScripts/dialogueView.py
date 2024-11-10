@@ -26,23 +26,26 @@ class DialogueView:
 
         self.currentLine : int = 1
         self.variant : int = None
+    
+    def _setNpc_(self, newNpc : str):
+        self.npc = newNpc
 
     def draw(self, surface : pygame.Surface, player, uiManager, displayedButtons : dict):
         if self.lines != "":
             player.movable = False
             with open('.venv/dialogues/debugDialogue.json', 'r') as file:
                 tempArq = json.load(file)
-                if len(tempArq['debugCat']) == 1 or self.currentLine == 1:
-                    btnsQtd = len(tempArq['debugCat'][str(self.currentLine)]) - 1
+                if len(tempArq[self.npc]) == 1 or self.currentLine == 1:
+                    btnsQtd = len(tempArq[self.npc][str(self.currentLine)]) - 1
                 else:
-                    btnsQtd = len(tempArq['debugCat'][str(self.currentLine)+'.'+str(self.variant)]) - 1
+                    btnsQtd = len(tempArq[self.npc][str(self.currentLine)+'.'+str(self.variant)]) - 1
                     # btnsQtd = len(tempArq['debugCat'][str(self.currentLine)]) - 1
             self.textFont.render_to(surface, self.textRect.topleft, self.lines, (255, 255, 255), (231, 15, 150))
 
             if not displayedButtons:
                 if btnsQtd != 0:
                     for i in range(btnsQtd):
-                        displayedButtons[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), tempArq['debugCat'][str(self.currentLine)][str(i+1)], uiManager, object_id=str(i+1)) if (len(tempArq['debugCat']) == 1 or self.currentLine == 1) else pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), tempArq['debugCat'][str(self.currentLine)+'.'+str(self.variant)][str(i+1)], uiManager, object_id=str(i+1))
+                        displayedButtons[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), tempArq[self.npc][str(self.currentLine)][str(i+1)], uiManager, object_id=str(i+1)) if (len(tempArq[self.npc]) == 1 or self.currentLine == 1) else pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55*i, 100, 50), tempArq[self.npc][str(self.currentLine)+'.'+str(self.variant)][str(i+1)], uiManager, object_id=str(i+1))
                         print(displayedButtons)
                 else:
                     displayedButtons[f'btn1'] = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55, 100, 50), f'Exit', uiManager, object_id=str(1))
@@ -54,7 +57,7 @@ class DialogueView:
         try:
             self.currentLine += 1
             self.variant = btnId
-            self.lines = tempArq['debugCat'][str(self.currentLine)+'.'+str(self.variant)]['Dialogue']
+            self.lines = tempArq[self.npc][str(self.currentLine)+'.'+str(self.variant)]['Dialogue']
         except KeyError:
             self.drawable = False
             self.currentLine = 1

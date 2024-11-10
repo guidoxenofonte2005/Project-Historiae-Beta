@@ -31,7 +31,7 @@ class Game:
             'player/walk' : Animation(load_images('characters/filip/idle'), 14), # trocar isso
             'debugCat' : Animation(load_images('animals/cat1'), 8),
             'debugCat2' : Animation(load_images('animals/cat2')),
-            'marble' : load_images('tiles'),
+            'marble' : load_images('tiles/'),
         }
 
         self.clock = pygame.time.Clock()
@@ -112,6 +112,7 @@ class Game:
                                 lastPhase = self.currentPhase
                                 self.currentPhase = self.interactableObjects[i].interact(self.display, renderScroll, self.dialogueBox, phase=self.currentPhase)
                                 if self.currentPhase != lastPhase:
+                                    self.dialogueBox._setNpc_(self.interactableObjects[i].name)
                                     break
                 if event.type == pygame.KEYUP:
                     match event.key:
