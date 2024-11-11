@@ -16,7 +16,7 @@ class Game:
     
         self.screen : pygame.Surface = pygame.display.set_mode((640, 360), flags = pygame.RESIZABLE)
 
-        self.guiManager = pygame_gui.UIManager([640, 360])
+        self.guiManager = pygame_gui.UIManager([1920, 1080], ".venv/themes/mainTheme.json")
 
         self.display = pygame.Surface((320, 180))
 
@@ -28,10 +28,11 @@ class Game:
 
         self.assets : dict = {
             'player/idle' : Animation(load_images('characters/filip/idle'), 18),
-            'player/walk' : Animation(load_images('characters/filip/idle'), 14), # trocar isso
+            'player/walk' : Animation(load_images('characters/filip/walk'), 12), # trocar isso
             'debugCat' : Animation(load_images('animals/cat1'), 8),
             'debugCat2' : Animation(load_images('animals/cat2')),
             'marble' : load_images('tiles/'),
+            'dialogueBox' : load_image('assets/dialogueBox.png')
         }
 
         self.clock = pygame.time.Clock()
@@ -133,8 +134,10 @@ class Game:
             self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
 
             if self.dialogueBox.drawable:
-                self.dialogueBox.draw(self.screen, self.Player, self.guiManager, self.buttonsOnScreen)
+                if self.currentPhase == 'interacting':
+                    self.screen.blit(self.assets['dialogueBox'], (self.screen.get_width() // 2, 0))
 
+                self.dialogueBox.draw(self.screen, self.Player, self.guiManager, self.buttonsOnScreen)
                 self.guiManager.draw_ui(self.screen)
 
             pygame.display.update()
