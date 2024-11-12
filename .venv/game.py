@@ -135,7 +135,7 @@ class Game:
 
             if self.dialogueBox.drawable:
                 if self.currentPhase == 'interacting':
-                    self.screen.blit(self.assets['dialogueBox'], (self.screen.get_width() // 2, 0))
+                    self.screen.blit(pygame.transform.scale(self.assets['dialogueBox'], [self.screen.get_size()[0] // 2, self.screen.get_size()[1] // 3]), (self.screen.get_width() // 4, 0))
 
                 self.dialogueBox.draw(self.screen, self.Player, self.guiManager, self.buttonsOnScreen)
                 self.guiManager.draw_ui(self.screen)

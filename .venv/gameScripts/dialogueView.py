@@ -32,6 +32,10 @@ class DialogueView:
 
     def draw(self, surface : pygame.Surface, player, uiManager, displayedButtons : dict):
         if self.lines != "":
+            if "\n" in self.lines:
+                lineCollection = self.lines.splitlines()
+            else:
+                lineCollection = []
             player.movable = False
             with open('.venv/dialogues/debugDialogue.json', 'r') as file:
                 tempArq = json.load(file)
@@ -40,7 +44,13 @@ class DialogueView:
                 else:
                     btnsQtd = len(tempArq[self.npc][str(self.currentLine)+'.'+str(self.variant)]) - 1
                     # btnsQtd = len(tempArq['debugCat'][str(self.currentLine)]) - 1
-            self.textFont.render_to(surface, self.textRect.topleft, self.lines, (255, 255, 255), (231, 15, 150))
+            if len(lineCollection) <= 1:
+                self.textFont.render_to(surface, [surface.get_width() // 4 + 68, 30], self.lines, (255, 255, 255))
+            else:
+                index = 0
+                for word in lineCollection:
+                    self.textFont.render_to(surface, [surface.get_width() // 4 + 68, 30 + 30 * index], word, (255, 255, 255))
+                    index += 1
 
             if not displayedButtons:
                 if btnsQtd != 0:

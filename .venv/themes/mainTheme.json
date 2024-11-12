@@ -6,7 +6,14 @@
             "path" : ".venv/fonts/Monocraft.ttf"
         },
         "colours" : {
-            "normal_text" : "#FFFFFF"
+            "normal_bg": "#00000000",
+            "hovered_bg": "#00000000",
+            "disabled_bg": "#00000000",
+            "normal_text" : "#FFFFFF",
+            "hovered_text" : "#C113C2",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000"
         }
     }
 }
