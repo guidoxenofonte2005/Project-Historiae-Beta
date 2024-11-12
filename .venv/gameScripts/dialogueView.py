@@ -3,6 +3,8 @@ import time
 import pygame.freetype
 import pygame_gui
 
+import pyautogui
+
 import json
 # classe pra lidar com diálogos
 # ainda falta pensar em como isso funcionaria
@@ -13,7 +15,7 @@ class DialogueView:
         else:
             self.lines = lines
         self.npc = ''
-        self.textFont = pygame.freetype.SysFont("Monocraft", 24)
+        self.textFont = pygame.freetype.SysFont("Monocraft", 24) if pyautogui.size()[0] >= 1920 else pygame.freetype.SysFont("Monocraft", 16)
 
         if type(self.lines) == list:
             self.textRect = self.textFont.get_rect(self.lines[0])
@@ -55,12 +57,12 @@ class DialogueView:
             if not displayedButtons:
                 if btnsQtd != 0:
                     for i in range(btnsQtd):
-                        tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 24)
+                        tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 24) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.ttf", 16)
                         textRect = tempFont.render(tempArq[self.npc][str(self.currentLine)][str(i+1)], True, (0,0,0)).get_rect()
-                        btnSize = (textRect.width + 10, textRect.height + 10)
-                        displayedButtons[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect((surface.get_size()[0] * 2) // 3, (surface.get_size()[1] // 2)+55*i, btnSize[0], btnSize[1]), tempArq[self.npc][str(self.currentLine)][str(i+1)], uiManager, object_id="buttonDialogue") if (len(tempArq[self.npc]) == 1 or self.currentLine == 1) else pygame_gui.elements.UIButton(pygame.Rect((surface.get_size()[0] * 2) // 3, (surface.get_size()[1] // 2)+55*i, btnSize[0], btnSize[1]), tempArq[self.npc][str(self.currentLine)+'.'+str(self.variant)][str(i+1)], uiManager, object_id="buttonDialogue")
+                        btnSize = (textRect.width + 10, 30)
+                        displayedButtons[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect((surface.get_size()[0] * 5) // 9, (surface.get_size()[1] // 5)+30*i, btnSize[0], btnSize[1]), tempArq[self.npc][str(self.currentLine)][str(i+1)], uiManager, object_id="buttonDialogue") if (len(tempArq[self.npc]) == 1 or self.currentLine == 1) else pygame_gui.elements.UIButton(pygame.Rect((surface.get_size()[0] * 5) // 8, (surface.get_size()[1] // 5)+30*i, btnSize[0], btnSize[1]), tempArq[self.npc][str(self.currentLine)+'.'+str(self.variant)][str(i+1)], uiManager, object_id="buttonDialogue")
                 else:
-                    displayedButtons[f'btn1'] = pygame_gui.elements.UIButton(pygame.Rect(150, 200 + 55, 100, 50), f'Exit', uiManager, object_id=str(1))
+                    displayedButtons[f'btn1'] = pygame_gui.elements.UIButton(pygame.Rect((surface.get_size()[0] * 5) // 8, surface.get_size()[1] // 5, 70, 30), f'Exit', uiManager, object_id="buttonDialogue")
         # surface.blit(img, surface.get_rect(center=(surface.get_width() // 2, surface.get_height() // 2)))
     
     def updateLines(self, btnId : int, displayedButtons : dict):

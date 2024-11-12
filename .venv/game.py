@@ -49,6 +49,9 @@ class Game:
 
         self.dialogueBox = DialogueView('')
         self.buttonsOnScreen : dict = {}
+
+        self.currentLevel : str
+        self.levelVar : int
         
         # self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
 
