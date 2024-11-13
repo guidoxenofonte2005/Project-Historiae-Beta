@@ -40,6 +40,7 @@ class Game:
             'dialogueBox' : load_image('assets/dialogueBox.png'),
             'bkgMenu' : load_image('assets/bkgMenu.png'),
             'title' : load_image('assets/title_with_logo.png'),
+            'returnStone' : Animation(load_images('assets/returnStone'), 12)
         }
 
         self.clock = pygame.time.Clock()
@@ -64,7 +65,7 @@ class Game:
         self.interactableObjects = [
             InteractiveObject((10, 245), 37, ["dialogue"], self, 'debugCat'),
             InteractiveObject((80, 245), 41, ["dialogue"], self, 'debugCat2'),
-
+            InteractiveObject((160, 254), 50, ["dialogue"], self, "returnStone")
         ]
 
         self.currentPhase : str = 'normal'
@@ -194,8 +195,6 @@ class Game:
                                 if self.currentPhase != lastPhase:
                                     self.dialogueBox._setNpc_(self.interactableObjects[i].name)
                                     break
-                        case pygame.K_t:
-                            self.transition = -30
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:
@@ -205,7 +204,6 @@ class Game:
                 if event.type == pygame_gui.UI_BUTTON_PRESSED:
                     for label, btn in self.buttonsOnScreen.copy().items():
                         if event.ui_element == btn:
-                            # print(int(label[-1]))
                             self.currentPhase = self.dialogueBox.updateLines(int(label[-1]), self.buttonsOnScreen)
 
                 self.guiManager.process_events(event)

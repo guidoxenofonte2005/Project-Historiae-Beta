@@ -1,7 +1,7 @@
 {
-    "debugCat": {
+    "returnStone": {
         "1" : {
-            "Dialogue" : "Hello stranger... nice to meet you",
+            "Dialogue" : "Do you wish to return to the normal world and\ntest your knowledge?",
             "1" : "Nice to see you too",
             "2" : "F#@! off"
         },

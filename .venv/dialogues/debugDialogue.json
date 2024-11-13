@@ -1,7 +1,7 @@
 {
     "debugCat": {
         "1" : {
-            "Dialogue" : "Hello stranger... nice to meet you",
+            "Dialogue" : "Do you wish to return to the normal world and\ntest your knowledge?",
             "1" : "Nice to see you too",
             "2" : "F#@! off"
         },
@@ -15,6 +15,13 @@
     "debugCat2" : {
         "1" : {
             "Dialogue" : "Test characters\n123456789012345678901234567890123456789012345678901\n234567890"
+        }
+    },
+    "returnStone" : {
+        "1" : {
+            "Dialogue" :"Do you wish to return to the normal world and\ntest your knowledge?",
+            "1" : "Yes, sure!",
+            "2" : "No, I'll come back later..."
         }
     }
 }
