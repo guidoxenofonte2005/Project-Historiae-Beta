@@ -19,7 +19,7 @@ class Game:
     def __init__(self) -> None:
         pygame.init()
     
-        self.screen : pygame.Surface = pygame.display.set_mode((640, 360), flags = pygame.RESIZABLE)
+        self.screen : pygame.Surface = pygame.display.set_mode((0, 0), flags = pygame.RESIZABLE)
 
         self.guiManager = pygame_gui.UIManager([1920, 1080], ".venv/themes/mainTheme.json")
 
@@ -69,7 +69,6 @@ class Game:
 
         self.currentPhase : str = 'normal'
 
-
         self._runMenu_()
     
     def _runMenu_(self):
@@ -77,22 +76,24 @@ class Game:
         runningMenu : bool = True
         angle : float = 0
 
-        #buttons
-        for i in range(2):
-            match i:
-                case 0:
-                    lines = "JOGAR"
-                case 1:
-                    lines = "SAIR"
-            tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 32) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.ttf", 24)
-            textRect = tempFont.render(lines, True, (0,0,0)).get_rect()
-            btnSize = (textRect.width + 30, 50)
-            self.buttonsOnScreen[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect((self.screen.get_size()[0] * 5) // 9, (self.screen.get_size()[1] // 5)+80*i, btnSize[0], btnSize[1]), lines, self.guiManager, object_id="buttonMenu")
-            
         #main loop
         while runningMenu:
             angle += 0.1
             time_delta = self.clock.tick(60)/1000.0
+
+            #buttons
+            if not self.buttonsOnScreen:
+                for i in range(2):
+                    match i:
+                        case 0:
+                            lines = "JOGAR"
+                        case 1:
+                            lines = "SAIR"
+                    tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 40) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.ttf", 32)
+                    textRect = tempFont.render(lines, True, (0,0,0)).get_rect()
+                    btnSize = (textRect.width + 80, 80)
+                    self.buttonsOnScreen[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect((self.screen.get_width() // 2) - (btnSize[0] // 2), (self.screen.get_height() // 2 + 90)+120*i, btnSize[0], btnSize[1]), lines, self.guiManager, object_id="buttonMenu")
+                print(self.buttonsOnScreen)
 
             self.display.blit(self.assets['bkgMenu'])
 
@@ -100,10 +101,8 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-                if event.type == pygame.KEYDOWN:
-                    runningMenu = False
                 if event.type == pygame_gui.UI_BUTTON_PRESSED:
-                    for label, btn in self.buttonsOnScreen.copy().items():
+                    for label, btn in self.buttonsOnScreen.items():
                         if event.ui_element == btn:
                             match label[-1]:
                                 case '1':
@@ -111,6 +110,8 @@ class Game:
                                 case '2':
                                     pygame.quit()
                                     sys.exit()
+
+            self.guiManager.process_events(event)
 
             self.guiManager.update(time_delta)
 
@@ -120,10 +121,13 @@ class Game:
             self.guiManager.draw_ui(self.screen)
 
             pygame.display.update()
-        
+
         for key in list(self.buttonsOnScreen.keys()):
             self.buttonsOnScreen[key].kill()
             del self.buttonsOnScreen[key]
+        
+        self.transition = -30
+        self._runTransition_()
             
 
     def loadLevel(self, pastLevelId : int, direction : int, customDirection : int = 0) -> None:

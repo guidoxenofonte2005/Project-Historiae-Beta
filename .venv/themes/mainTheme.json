@@ -2,6 +2,7 @@
     "buttonDialogue" : {
         "font" : {
             "name" : "Monocraft",
+            "size" : 16,
             "path" : ".venv/fonts/Monocraft.ttf"
         },
         "colours" : {
@@ -18,7 +19,7 @@
     "buttonMenu" : {
         "font" : {
             "name" : "Monocraft",
-            "size" : 32,
+            "size" : 40,
             "path" : ".venv/fonts/Monocraft.ttf"
         },
         "colours" : {
