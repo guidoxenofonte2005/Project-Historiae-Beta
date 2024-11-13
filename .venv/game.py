@@ -13,8 +13,6 @@ from gameScripts.dialogueView import DialogueView
 
 from math import sin
 
-import json
-
 class Game:
     def __init__(self) -> None:
         pygame.init()
