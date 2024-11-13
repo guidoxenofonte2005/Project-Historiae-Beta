@@ -14,5 +14,22 @@
             "hovered_border": "#00000000",
             "disabled_border": "#00000000"
         }
+    },
+    "buttonMenu" : {
+        "font" : {
+            "name" : "Monocraft",
+            "size" : 32,
+            "path" : ".venv/fonts/Monocraft.ttf"
+        },
+        "colours" : {
+            "normal_bg": "#CD7F32",
+            "hovered_bg": "#7B3F00",
+            "disabled_bg": "#00000000",
+            "normal_text" : "#FFFFFF",
+            "hovered_text" : "#EADDCA",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000"
+        }
     }
 }

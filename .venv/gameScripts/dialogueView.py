@@ -38,14 +38,18 @@ class DialogueView:
                 lineCollection = self.lines.splitlines()
             else:
                 lineCollection = []
+            
+            # turn off player movement
             player.movable = False
+
             with open('.venv/dialogues/debugDialogue.json', 'r') as file:
                 tempArq = json.load(file)
                 if len(tempArq[self.npc]) == 1 or self.currentLine == 1:
                     btnsQtd = len(tempArq[self.npc][str(self.currentLine)]) - 1
                 else:
                     btnsQtd = len(tempArq[self.npc][str(self.currentLine)+'.'+str(self.variant)]) - 1
-                    # btnsQtd = len(tempArq['debugCat'][str(self.currentLine)]) - 1
+
+            # line handling
             if len(lineCollection) <= 1:
                 self.textFont.render_to(surface, [surface.get_width() // 4 + 68, 30], self.lines, (255, 255, 255))
             else:

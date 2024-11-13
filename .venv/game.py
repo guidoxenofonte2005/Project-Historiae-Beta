@@ -2,6 +2,7 @@ import sys
 import time
 import pygame
 import pygame_gui
+import pyautogui
 
 from gameScripts.utils import *
 from gameScripts.entities import Player
@@ -9,6 +10,10 @@ from gameScripts.tilemap import Tilemap
 from gameScripts.objects import InteractiveObject
 
 from gameScripts.dialogueView import DialogueView
+
+from math import sin
+
+import json
 
 class Game:
     def __init__(self) -> None:
@@ -28,11 +33,13 @@ class Game:
 
         self.assets : dict = {
             'player/idle' : Animation(load_images('characters/filip/idle'), 18),
-            'player/walk' : Animation(load_images('characters/filip/walk'), 12), # trocar isso
+            'player/walk' : Animation(load_images('characters/filip/walk'), 12),
             'debugCat' : Animation(load_images('animals/cat1'), 8),
             'debugCat2' : Animation(load_images('animals/cat2')),
             'marble' : load_images('tiles/'),
-            'dialogueBox' : load_image('assets/dialogueBox.png')
+            'dialogueBox' : load_image('assets/dialogueBox.png'),
+            'bkgMenu' : load_image('assets/bkgMenu.png'),
+            'title' : load_image('assets/title_with_logo.png'),
         }
 
         self.clock = pygame.time.Clock()
@@ -52,8 +59,7 @@ class Game:
 
         self.currentLevel : str
         self.levelVar : int
-        
-        # self.testCatSpr : pygame.Surface = pygame.image.load('.venv/images/catito.png')
+        self.transition : bool = False
 
         self.interactableObjects = [
             InteractiveObject((10, 245), 37, ["dialogue"], self, 'debugCat'),
@@ -63,7 +69,76 @@ class Game:
 
         self.currentPhase : str = 'normal'
 
+
+        self._runMenu_()
+    
+    def _runMenu_(self):
+        #variable set
+        runningMenu : bool = True
+        angle : float = 0
+
+        #buttons
+        for i in range(2):
+            match i:
+                case 0:
+                    lines = "JOGAR"
+                case 1:
+                    lines = "SAIR"
+            tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 32) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.ttf", 24)
+            textRect = tempFont.render(lines, True, (0,0,0)).get_rect()
+            btnSize = (textRect.width + 30, 50)
+            self.buttonsOnScreen[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect((self.screen.get_size()[0] * 5) // 9, (self.screen.get_size()[1] // 5)+80*i, btnSize[0], btnSize[1]), lines, self.guiManager, object_id="buttonMenu")
+            
+        #main loop
+        while runningMenu:
+            angle += 0.1
+            time_delta = self.clock.tick(60)/1000.0
+
+            self.display.blit(self.assets['bkgMenu'])
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    runningMenu = False
+                if event.type == pygame_gui.UI_BUTTON_PRESSED:
+                    for label, btn in self.buttonsOnScreen.copy().items():
+                        if event.ui_element == btn:
+                            match label[-1]:
+                                case '1':
+                                    runningMenu = False
+                                case '2':
+                                    pygame.quit()
+                                    sys.exit()
+
+            self.guiManager.update(time_delta)
+
+            self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
+            self.screen.blit(pygame.transform.scale(self.assets['title'], [self.screen.get_size()[0] // 1.4, self.screen.get_size()[1] // 1.6]), (self.screen.get_size()[0] // 7, 0 + 2*sin(angle)))
+            
+            self.guiManager.draw_ui(self.screen)
+
+            pygame.display.update()
+        
+        for key in list(self.buttonsOnScreen.keys()):
+            self.buttonsOnScreen[key].kill()
+            del self.buttonsOnScreen[key]
+            
+
+    def loadLevel(self, pastLevelId : int, direction : int, customDirection : int = 0) -> None:
+        match direction:
+            case 1:
+                self.tilemap.load(f".venv/maps/{self.currentLevel}{str(pastLevelId + 1)}.json")
+            case -1:
+                self.tilemap.load(f".venv/maps/{self.currentLevel}{str(pastLevelId - 1)}.json")
+            case _:
+                self.tilemap.load(f".venv/maps/{self.currentLevel}{str(pastLevelId + customDirection)}.json")
+        self.transition = -30
+        
+
     def run(self):
+        print(self.buttonsOnScreen)
         while True:
             time_delta = self.clock.tick(60)/1000.0
             self.display.fill((28, 138, 217))
@@ -77,22 +152,19 @@ class Game:
                     self.Player.movable = False
                 case 'normal':
                     self.Player.movable = True
+            
+            if self.transition < 0:
+                self.transition += 1
 
             self.tilemap.render(self.display, offset = renderScroll)
 
             self.Player.update(self.tilemap, (self.movement[1] - self.movement[0], 0))
-
-            # pygame.draw.rect(self.display, 'white', pygame.Rect(self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1], self.Player.size[0], self.Player.size[1]))
             self.Player.render(self.display, offset=renderScroll)
 
             for i in range(len(self.interactableObjects)):
                 self.dialogueBox.drawable = True if self.interactableObjects[i].checkCollision(self.Player, self.display, (self.interactableObjects[i].position[0] - self.scroll[0] - self.interactableObjects[i].radius, self.interactableObjects[i].position[1] - self.scroll[1] - self.interactableObjects[i].radius)) else False
                 if self.dialogueBox.drawable:
                     break
-            
-            # self.dialogueBox.drawable = self.testCat.checkCollision(self.Player, self.display, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
-            
-            # self.display.blit(self.testCatSpr, (self.testCat.position[0] - self.scroll[0] - self.testCat.radius, self.testCat.position[1] - self.scroll[1] - self.testCat.radius))
             
             for i in range(len(self.interactableObjects)):
                 self.interactableObjects[i].render(self.display, offset=renderScroll)
@@ -118,6 +190,8 @@ class Game:
                                 if self.currentPhase != lastPhase:
                                     self.dialogueBox._setNpc_(self.interactableObjects[i].name)
                                     break
+                        case pygame.K_t:
+                            self.transition = -30
                 if event.type == pygame.KEYUP:
                     match event.key:
                         case pygame.K_LEFT:
@@ -133,6 +207,9 @@ class Game:
                 self.guiManager.process_events(event)
             
             self.guiManager.update(time_delta)
+            
+            if self.transition:
+                self._runTransition_()
 
             self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
 
@@ -144,5 +221,11 @@ class Game:
                 self.guiManager.draw_ui(self.screen)
 
             pygame.display.update()
+
+    def _runTransition_(self):
+        transition_surf = pygame.Surface(self.display.get_size())
+        pygame.draw.circle(transition_surf, (255, 255, 255), (self.display.get_width() // 2, self.display.get_height() // 2), (30 - abs(self.transition)) * 8)
+        transition_surf.set_colorkey((255, 255, 255))
+        self.display.blit(transition_surf, (0, 0))
 
 Game().run()
