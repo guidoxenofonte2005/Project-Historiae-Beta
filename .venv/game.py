@@ -39,7 +39,8 @@ class Game:
             'dialogueBox' : load_image('assets/dialogueBox.png'),
             'bkgMenu' : load_image('assets/bkgMenu.png'),
             'title' : load_image('assets/title_with_logo.png'),
-            'returnStone' : Animation(load_images('assets/returnStone'), 12)
+            'returnStone' : Animation(load_images('assets/returnStone'), 12),
+            'quizLevel' : load_image('assets/auditorium.png'),
         }
 
         self.clock = pygame.time.Clock()
@@ -47,7 +48,7 @@ class Game:
         self.tilemap = Tilemap(self, 32)
         self.tilemap.load('.venv/maps/mapDEBUG.json')
 
-        self.Player = Player(self, 'player', (50, 180), (14, 48))
+        self.Player = Player(self, 'player', (50, 176), (14, 48))
         self.test = pygame.Rect(self.Player.position[0], self.Player.position[1], self.Player.size[0], self.Player.size[1])
 
         self.movement = [False, False]
@@ -147,13 +148,12 @@ class Game:
         self.transition = -30
 
     def run(self):
-        print(self.buttonsOnScreen)
         while True:
             match self.currentPhase:
                 case 'finalQuiz':
                     time_delta = self.clock.tick(60)/1000.0
 
-                    self.display.fill((28, 138, 217))
+                    self.display.blit(self.assets['quizLevel'], (-20, -20))
 
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:

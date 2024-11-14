@@ -106,7 +106,7 @@ class Player(PhysicsEntity):
         elif movement[0] < 0:
             self.flip = True
 
-        self.velocity[1] = min(5, self.velocity[1] + 0.1)
+        # self.velocity[1] = min(5, self.velocity[1] + 0.1)
 
         if self.collisions["down"] or self.collisions["up"]:
             self.velocity[1] = 0
