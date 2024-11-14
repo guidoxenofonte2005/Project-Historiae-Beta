@@ -32,7 +32,7 @@ class Game:
         self.assets : dict = {
             'player/idle' : Animation(load_images('characters/filip/idle'), 18),
             'player/walk' : Animation(load_images('characters/filip/walk'), 12),
-            'player/suit' : Animation(load_images('characters/filip/suit'), 18),
+            'player/suit' : Animation(load_images('characters/filip/suit'), 22),
             'debugCat' : Animation(load_images('animals/cat1'), 8),
             'debugCat2' : Animation(load_images('animals/cat2')),
             'marble' : load_images('tiles/'),
@@ -41,6 +41,7 @@ class Game:
             'title' : load_image('assets/title_with_logo.png'),
             'returnStone' : Animation(load_images('assets/returnStone'), 12),
             'quizLevel' : load_image('assets/auditorium.png'),
+            'teachDesk' : load_image('assets/desk.png'),
         }
 
         self.clock = pygame.time.Clock()
@@ -154,6 +155,16 @@ class Game:
                     time_delta = self.clock.tick(60)/1000.0
 
                     self.display.blit(self.assets['quizLevel'], (-20, -20))
+
+                    self.Player.position = [230, 79]
+                    self.Player.flip = True
+
+                    self.Player.setAction('suit')
+
+                    self.Player.animation.update()
+                    self.Player.render(self.display)
+
+                    self.display.blit(self.assets['teachDesk'], (220, 107))
 
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
