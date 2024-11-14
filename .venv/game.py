@@ -9,7 +9,7 @@ from gameScripts.entities import Player
 from gameScripts.tilemap import Tilemap
 from gameScripts.objects import InteractiveObject
 
-from gameScripts.dialogueView import DialogueView
+from gameScripts.dialogueView import DialogueView, QuizView
 
 from math import sin
 
@@ -54,7 +54,10 @@ class Game:
 
         self.scroll = [0, 0]
 
+        # dialogues
         self.dialogueBox = DialogueView('')
+        self.quizBox = QuizView('')
+        self.correctQuestions : int = 0
         self.buttonsOnScreen : dict = {}
 
         self.currentLevel : str
