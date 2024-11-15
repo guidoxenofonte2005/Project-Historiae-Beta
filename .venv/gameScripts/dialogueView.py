@@ -92,12 +92,9 @@ class DialogueView:
         return 'interacting'
 
 class QuizView(DialogueView):
-    def __init__(self, lines = ''):
-        if '\n' in lines:
-            self.lines = lines.split("\n")
-        else:
-            self.lines = lines
-        self.currentQuestion : int
+    def __init__(self, levelName = ''):
+        with open('.venv/questions/athens.json', 'r') as file:
+            self.lines = json.load(file)['1']['Question']
         self.textFont = pygame.freetype.SysFont("Monocraft", 24) if pyautogui.size()[0] >= 1920 else pygame.freetype.SysFont("Monocraft", 16)
 
         if type(self.lines) == list:
@@ -110,7 +107,6 @@ class QuizView(DialogueView):
         self.dialogueFile = ''
 
         self.currentLine : int = 1
-        self.currentQuestion : int = 1
     
     def draw(self, surface, player, uiManager, displayedButtons):
         if self.lines != "":
@@ -124,7 +120,7 @@ class QuizView(DialogueView):
 
             with open('.venv/questions/athens.json', 'r') as file:
                 tempArq = json.load(file)
-                btnsQtd = len(tempArq[str(self.currentQuestion)]) - 1
+                btnsQtd = len(tempArq[str(self.currentLine)]) - 1
 
             # line handling
             if len(lineCollection) <= 1:
@@ -140,9 +136,9 @@ class QuizView(DialogueView):
                 if btnsQtd != 0:
                     for i in range(btnsQtd):
                         tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 24) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.ttf", 16)
-                        textRect = tempFont.render(tempArq[self.npc][str(self.currentLine)][str(i+1)], True, (0,0,0)).get_rect()
+                        textRect = tempFont.render(tempArq[str(self.currentLine)][str(i+1)]['Text'], True, (0,0,0)).get_rect()
                         btnSize = (textRect.width + 10, 30)
-                        displayedButtons[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect((surface.get_size()[0] * 5) // 9, (surface.get_size()[1] // 5)+30*i, btnSize[0], btnSize[1]), tempArq[self.npc][str(self.currentLine)][str(i+1)], uiManager, object_id="buttonDialogue") if (len(tempArq[self.npc]) == 1 or self.currentLine == 1) else pygame_gui.elements.UIButton(pygame.Rect((surface.get_size()[0] * 5) // 8, (surface.get_size()[1] // 5)+30*i, btnSize[0], btnSize[1]), tempArq[self.npc][str(self.currentLine)+'.'+str(self.variant)][str(i+1)], uiManager, object_id="buttonDialogue")
+                        displayedButtons[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect((surface.get_size()[0] // 2) - (textRect.width // 2), (surface.get_size()[1] // 5)+30*i, btnSize[0], btnSize[1]), tempArq[str(self.currentLine)][str(i+1)]['Text'], uiManager, object_id="buttonDialogue")
                 else:
                     displayedButtons[f'btn1'] = pygame_gui.elements.UIButton(pygame.Rect((surface.get_size()[0] * 5) // 8, surface.get_size()[1] // 5, 70, 30), f'Exit', uiManager, object_id="buttonDialogue")
     
@@ -152,7 +148,7 @@ class QuizView(DialogueView):
         try:
             self.currentLine += 1
             self.variant = btnId
-            self.lines = tempArq[self.npc][str(self.currentLine)+'.'+str(self.variant)]['Dialogue']
+            self.lines = tempArq[str(self.currentLine)]['Question']
         except KeyError:
             self.drawable = False
             self.currentLine = 1
@@ -161,7 +157,7 @@ class QuizView(DialogueView):
             for key in list(displayedButtons.keys()):
                 displayedButtons[key].kill()
                 del displayedButtons[key]
-            return 'changeArea'
+            return 'endGame'
 
         for key in list(displayedButtons.keys()):
             displayedButtons[key].kill()

@@ -138,10 +138,13 @@ class Game:
         match direction:
             case 1:
                 self.tilemap.load(f".venv/maps/{self.currentLevel}{str(pastLevelId + 1)}.json")
+                self.levelVar = pastLevelId + 1
             case -1:
                 self.tilemap.load(f".venv/maps/{self.currentLevel}{str(pastLevelId - 1)}.json")
+                self.levelVar = pastLevelId - 1
             case _:
                 self.tilemap.load(f".venv/maps/{self.currentLevel}{str(pastLevelId + customDirection)}.json")
+                self.levelVar = pastLevelId + customDirection
         self.transition = -30
 
     def __loadCustomLevel__(self, levelName):
@@ -189,8 +192,11 @@ class Game:
                                     self.movement[1] = False
                         if event.type == pygame_gui.UI_BUTTON_PRESSED:
                             for label, btn in self.buttonsOnScreen.copy().items():
+                                print(label, btn)
                                 if event.ui_element == btn:
-                                    self.currentPhase = self.dialogueBox.updateLines(int(label[-1]), self.buttonsOnScreen)
+                                    print(self.currentPhase)
+                                    self.currentPhase = self.quizBox.updateLines(int(label[-1]), self.buttonsOnScreen)
+                        self.guiManager.process_events(event)
                     
                     self.guiManager.update(time_delta)
                     
@@ -206,14 +212,9 @@ class Game:
                         self.quizBox.draw(self.screen, self.Player, self.guiManager, self.buttonsOnScreen)
                         self.guiManager.draw_ui(self.screen)
 
-                    # if self.dialogueBox.drawable:
-                    #     if self.currentPhase == 'interacting':
-                    #         self.screen.blit(pygame.transform.scale(self.assets['dialogueBox'], [self.screen.get_size()[0] // 2, self.screen.get_size()[1] // 3]), (self.screen.get_width() // 4, 0))
-
-                    #     self.dialogueBox.draw(self.screen, self.Player, self.guiManager, self.buttonsOnScreen)
-                    #     self.guiManager.draw_ui(self.screen)
-
                     pygame.display.update()
+                case 'endGame':
+                    pass
                 case _:
                     time_delta = self.clock.tick(60)/1000.0
                     self.display.fill((28, 138, 217))
