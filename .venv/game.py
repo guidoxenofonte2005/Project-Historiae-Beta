@@ -209,7 +209,6 @@ class Game:
                         self.guiManager.draw_ui(self.screen)
 
                     pygame.display.update()
-
                 case _:
                     time_delta = self.clock.tick(60)/1000.0
                     self.display.fill((28, 138, 217))
