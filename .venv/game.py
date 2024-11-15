@@ -155,6 +155,9 @@ class Game:
                     time_delta = self.clock.tick(60)/1000.0
 
                     self.display.blit(self.assets['quizLevel'], (-20, -20))
+                    
+                    if self.transition < 0:
+                        self.transition += 1
 
                     self.Player.position = [230, 79]
                     self.Player.flip = True
@@ -198,6 +201,9 @@ class Game:
                                     self.currentPhase = self.dialogueBox.updateLines(int(label[-1]), self.buttonsOnScreen)
                     
                     self.guiManager.update(time_delta)
+                    
+                    if self.transition:
+                        self._runTransition_()
 
                     self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
 
@@ -272,12 +278,19 @@ class Game:
                                     self.currentPhase = self.dialogueBox.updateLines(int(label[-1]), self.buttonsOnScreen)
                                     interactingObject = next((obj for obj in self.interactableObjects if obj.interactable), None)
                                     if interactingObject.name == "returnStone" and label[-1] == "1":
-                                        self.currentPhase = 'finalQuiz'
+                                        self.currentPhase = 'changeAreaToQuiz'
 
                         self.guiManager.process_events(event)
                     
                     self.guiManager.update(time_delta)
                     
+                    if self.currentPhase[:10] == 'changeArea':
+                        if self.transition <= 30:
+                            self.transition += 1
+                        else:
+                            self.transition = -30
+                            if self.currentPhase == 'changeAreaToQuiz':
+                                self.currentPhase = 'finalQuiz'
                     if self.transition:
                         self._runTransition_()
 
