@@ -181,14 +181,6 @@ class Game:
                                 case pygame.K_RIGHT:
                                     if self.currentPhase != 'interacting':
                                         self.movement[1] = True
-                                case pygame.K_a:
-                                    # self.dialogueBox.update(self.display, (self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1]))
-                                    for i in range(len(self.interactableObjects)):
-                                        lastPhase = self.currentPhase
-                                        self.currentPhase = self.interactableObjects[i].interact(self.display, renderScroll, self.dialogueBox, phase=self.currentPhase)
-                                        if self.currentPhase != lastPhase:
-                                            self.dialogueBox._setNpc_(self.interactableObjects[i].name)
-                                            break
                         if event.type == pygame.KEYUP:
                             match event.key:
                                 case pygame.K_LEFT:
@@ -206,13 +198,20 @@ class Game:
                         self._runTransition_()
 
                     self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
+                    
+                    if self.transition == 0:
+                        self.quizBox.drawable = True
+                        self.screen.blit(pygame.transform.scale(self.assets['dialogueBox'], [self.screen.get_size()[0] // 2, self.screen.get_size()[1] // 3]), (self.screen.get_width() // 4, 0))
 
-                    if self.dialogueBox.drawable:
-                        if self.currentPhase == 'interacting':
-                            self.screen.blit(pygame.transform.scale(self.assets['dialogueBox'], [self.screen.get_size()[0] // 2, self.screen.get_size()[1] // 3]), (self.screen.get_width() // 4, 0))
-
-                        self.dialogueBox.draw(self.screen, self.Player, self.guiManager, self.buttonsOnScreen)
+                        self.quizBox.draw(self.screen, self.Player, self.guiManager, self.buttonsOnScreen)
                         self.guiManager.draw_ui(self.screen)
+
+                    # if self.dialogueBox.drawable:
+                    #     if self.currentPhase == 'interacting':
+                    #         self.screen.blit(pygame.transform.scale(self.assets['dialogueBox'], [self.screen.get_size()[0] // 2, self.screen.get_size()[1] // 3]), (self.screen.get_width() // 4, 0))
+
+                    #     self.dialogueBox.draw(self.screen, self.Player, self.guiManager, self.buttonsOnScreen)
+                    #     self.guiManager.draw_ui(self.screen)
 
                     pygame.display.update()
                 case _:
