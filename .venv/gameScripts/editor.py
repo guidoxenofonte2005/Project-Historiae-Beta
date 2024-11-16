@@ -122,8 +122,6 @@ class Editor:
                             self.movement[3] = True
                         case pygame.K_o:
                             self.tileMap.save('.venv/maps/mapDEBUG.json')
-                        case pygame.K_t:
-                            self.tileMap.autotile()
                         case pygame.K_g:
                             self.on_grid = not self.on_grid
                         case pygame.K_LSHIFT:
