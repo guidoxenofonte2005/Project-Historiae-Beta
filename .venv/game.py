@@ -328,6 +328,7 @@ class Game:
 
             text = f'Thanks for playing! >:D\nYour score was {self.correctQuestions}.'
             font = pygame.freetype.SysFont("Monocraft", 24) if pyautogui.size()[0] >= 1920 else pygame.freetype.SysFont("Monocraft", 16)
+            tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 24) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.ttf", 16)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -348,7 +349,8 @@ class Game:
 
             index = 0
             for word in text.splitlines():
-                font.render_to(self.screen, [self.screen.get_width() // 4 + 68, self.screen.get_height() // 2 + 30 * index], word, (255, 255, 255))
+                tempRect : pygame.Rect = tempFont.render(word, True, (0,0,0)).get_rect()
+                font.render_to(self.screen, [self.screen.get_width() // 2 - tempRect.centerx, (self.screen.get_height() // 2 + 80) + 30 * index], word, (255, 255, 255))
                 index += 1
             
             self.guiManager.draw_ui(self.screen)
