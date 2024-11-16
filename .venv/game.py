@@ -13,6 +13,8 @@ from gameScripts.dialogueView import DialogueView, QuizView
 
 from math import sin
 
+import json
+
 class Game:
     def __init__(self) -> None:
         pygame.init()
@@ -60,6 +62,8 @@ class Game:
         self.dialogueBox = DialogueView('')
         self.quizBox = QuizView('')
         self.correctQuestions : int = 0
+        self.questionNum : int = 1
+        self.maxQuestions : int = 1
         self.buttonsOnScreen : dict = {}
 
         self.currentLevel : str
@@ -73,6 +77,8 @@ class Game:
         ]
 
         self.currentPhase : str = 'normal'
+
+        self.ended : bool = False
 
         self._runMenu_()
     
@@ -152,7 +158,7 @@ class Game:
         self.transition = -30
 
     def run(self):
-        while True:
+        while not self.ended:
             match self.currentPhase:
                 case 'finalQuiz':
                     time_delta = self.clock.tick(60)/1000.0
@@ -192,11 +198,18 @@ class Game:
                                     self.movement[1] = False
                         if event.type == pygame_gui.UI_BUTTON_PRESSED:
                             for label, btn in self.buttonsOnScreen.copy().items():
-                                print(label, btn)
                                 if event.ui_element == btn:
-                                    print(self.currentPhase)
-                                    self.currentPhase = self.quizBox.updateLines(int(label[-1]), self.buttonsOnScreen)
+                                    with open('.venv/questions/athens.json', 'r') as file:
+                                        tempArq = json.load(file)
+                                    print(tempArq[str(self.questionNum)][str(int(label[-1]))]["Answer"])
+                                    if tempArq[str(self.questionNum)][str(int(label[-1]))]["Answer"] == True:
+                                        self.correctQuestions += 1
+                                    self.quizBox.updateLines(int(label[-1]), self.buttonsOnScreen)
+                                    self.questionNum += 1
                         self.guiManager.process_events(event)
+                    
+                    if self.questionNum == self.maxQuestions + 1:
+                        self.ended = True
                     
                     self.guiManager.update(time_delta)
                     
@@ -213,8 +226,6 @@ class Game:
                         self.guiManager.draw_ui(self.screen)
 
                     pygame.display.update()
-                case 'endGame':
-                    pass
                 case _:
                     time_delta = self.clock.tick(60)/1000.0
                     self.display.fill((28, 138, 217))
@@ -304,6 +315,45 @@ class Game:
                         self.guiManager.draw_ui(self.screen)
 
                     pygame.display.update()
+
+        while True:
+            if not self.buttonsOnScreen:
+                lines = "SAIR"
+                tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 40) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.ttf", 32)
+                textRect = tempFont.render(lines, True, (0,0,0)).get_rect()
+                btnSize = (textRect.width + 80, 80)
+                self.buttonsOnScreen[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect((self.screen.get_width() // 2) - (btnSize[0] // 2), (self.screen.get_height() // 2 + 200), btnSize[0], btnSize[1]), lines, self.guiManager, object_id="buttonMenu")
+
+            self.display.blit(self.assets['bkgMenu'])
+
+            text = f'Thanks for playing! >:D\nYour score was {self.correctQuestions}.'
+            font = pygame.freetype.SysFont("Monocraft", 24) if pyautogui.size()[0] >= 1920 else pygame.freetype.SysFont("Monocraft", 16)
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame_gui.UI_BUTTON_PRESSED:
+                    for label, btn in self.buttonsOnScreen.items():
+                        if event.ui_element == btn:
+                            pygame.quit()
+                            sys.exit()
+
+            self.guiManager.process_events(event)
+
+            self.guiManager.update(time_delta)
+
+            self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
+            self.screen.blit(pygame.transform.scale(self.assets['title'], [self.screen.get_size()[0] // 1.4, self.screen.get_size()[1] // 1.6]), (self.screen.get_size()[0] // 7, 0))
+
+            index = 0
+            for word in text.splitlines():
+                font.render_to(self.screen, [self.screen.get_width() // 4 + 68, self.screen.get_height() // 2 + 30 * index], word, (255, 255, 255))
+                index += 1
+            
+            self.guiManager.draw_ui(self.screen)
+
+            pygame.display.update()
 
     def _runTransition_(self):
         transition_surf = pygame.Surface(self.display.get_size())

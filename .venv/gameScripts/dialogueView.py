@@ -143,16 +143,14 @@ class QuizView(DialogueView):
                     displayedButtons[f'btn1'] = pygame_gui.elements.UIButton(pygame.Rect((surface.get_size()[0] * 5) // 8, surface.get_size()[1] // 5, 70, 30), f'Exit', uiManager, object_id="buttonDialogue")
     
     def updateLines(self, btnId: int, displayedButtons: dict):
-        with open('.venv/dialogues/debugDialogue.json', 'r') as file:
+        with open('.venv/questions/athens.json', 'r') as file:
             tempArq = json.load(file)
         try:
             self.currentLine += 1
-            self.variant = btnId
             self.lines = tempArq[str(self.currentLine)]['Question']
         except KeyError:
             self.drawable = False
             self.currentLine = 1
-            self.variant = None
             self.lines = ''
             for key in list(displayedButtons.keys()):
                 displayedButtons[key].kill()
