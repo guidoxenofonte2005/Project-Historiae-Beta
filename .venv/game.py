@@ -175,7 +175,7 @@ class Game:
 
                     self.Player.animation.update()
                     self.Player.render(self.display)
-                    
+
                     self.tilemap.render(self.display)
 
                     for event in pygame.event.get():
@@ -288,8 +288,9 @@ class Game:
                                 if event.ui_element == btn:
                                     self.currentPhase = self.dialogueBox.updateLines(int(label[-1]), self.buttonsOnScreen)
                                     interactingObject = next((obj for obj in self.interactableObjects if obj.interactable), None)
-                                    if interactingObject.name == "returnStone" and label[-1] == "1":
-                                        self.currentPhase = 'changeAreaToQuiz'
+                                    if interactingObject.name == "returnStone":
+                                        if int(label[-1]) == 1:
+                                            self.currentPhase = 'changeAreaToQuiz'
 
                         self.guiManager.process_events(event)
                     

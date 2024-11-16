@@ -34,8 +34,8 @@ class InteractiveObject:
                         tempLines = json.load(file)
                     dialogueView.lines = tempLines[self.name]['1']["Dialogue"]
                     dialogueView.dialogueFile = dialogueFile
-                elif action == "get":
-                    pass
+                elif action == "changeArea":
+                    return "changeArea"
                 else:
                     print("\033[31mInvalid action\033[m")
             return 'interacting'

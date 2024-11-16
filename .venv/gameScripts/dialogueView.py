@@ -84,7 +84,7 @@ class DialogueView:
             for key in list(displayedButtons.keys()):
                 displayedButtons[key].kill()
                 del displayedButtons[key]
-            return 'changeArea'
+            return 'normal'
 
         for key in list(displayedButtons.keys()):
             displayedButtons[key].kill()

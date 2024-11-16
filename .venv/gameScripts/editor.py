@@ -28,7 +28,7 @@ class Editor:
 
 
         try:
-            self.tileMap.load('.venv/maps/finalQuiz.json')
+            self.tileMap.load('.venv/maps/athens2.json')
         except FileNotFoundError:
             pass
 
