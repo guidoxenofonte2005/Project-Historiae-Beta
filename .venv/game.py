@@ -43,13 +43,13 @@ class Game:
             'title' : load_image('assets/title_with_logo.png'),
             'returnStone' : Animation(load_images('assets/returnStone'), 12),
             'quizLevel' : load_image('assets/auditorium.png'),
-            'teachDesk' : load_image('assets/desk.png'),
+            'decor' : load_images('assets/moveis'),
         }
 
         self.clock = pygame.time.Clock()
 
         self.tilemap = Tilemap(self, 32)
-        self.tilemap.load('.venv/maps/mapDEBUG.json')
+        self.tilemap.load('.venv/maps/athens2.json')
 
         self.Player = Player(self, 'player', (50, 176), (14, 48))
         self.test = pygame.Rect(self.Player.position[0], self.Player.position[1], self.Player.size[0], self.Player.size[1])
@@ -175,8 +175,8 @@ class Game:
 
                     self.Player.animation.update()
                     self.Player.render(self.display)
-
-                    self.display.blit(self.assets['teachDesk'], (220, 107))
+                    
+                    self.tilemap.render(self.display)
 
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
@@ -302,6 +302,7 @@ class Game:
                             self.transition = -30
                             if self.currentPhase == 'changeAreaToQuiz':
                                 self.currentPhase = 'finalQuiz'
+                                self.tilemap.load(f".venv/maps/finalQuiz.json")
                     if self.transition:
                         self._runTransition_()
 

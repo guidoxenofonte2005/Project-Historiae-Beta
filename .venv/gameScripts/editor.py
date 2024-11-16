@@ -1,7 +1,7 @@
 import sys
 import pygame
 
-from utils import load_images
+from utils import load_images, load_image
 from tilemap import Tilemap
 
 RENDER_SCALE = 1.0
@@ -20,14 +20,15 @@ class Editor:
         self.movement : tuple[bool] = [False, False, False, False]
 
         self.assets : dict = {
-            'marble' : load_images('tiles/')
+            'marble' : load_images('tiles/'),
+            'decor' : load_images('assets/moveis'),
         }
 
         self.tileMap = Tilemap(self, tileSize=32)
 
 
         try:
-            self.tileMap.load('.venv/maps/mapDEBUG.json')
+            self.tileMap.load('.venv/maps/finalQuiz.json')
         except FileNotFoundError:
             pass
 
@@ -57,6 +58,7 @@ class Editor:
             current_tile_img.set_alpha(100)
 
             mouse_position = pygame.mouse.get_pos()
+            print(mouse_position)
             mouse_position = (mouse_position[0] / RENDER_SCALE, mouse_position[1] / RENDER_SCALE)
             tile_position = (int(mouse_position[0] + self.scroll[0]) // self.tileMap.tile_size, int(mouse_position[1] + self.scroll[1]) // self.tileMap.tile_size)
 
