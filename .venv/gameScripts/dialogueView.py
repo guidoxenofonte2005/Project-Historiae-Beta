@@ -42,7 +42,7 @@ class DialogueView:
             # turn off player movement
             player.movable = False
 
-            with open('.venv/dialogues/debugDialogue.json', 'r') as file:
+            with open('.venv/dialogues/athens.json', 'r') as file:
                 tempArq = json.load(file)
                 if len(tempArq[self.npc]) == 1 or self.currentLine == 1:
                     btnsQtd = len(tempArq[self.npc][str(self.currentLine)]) - 1
@@ -70,7 +70,7 @@ class DialogueView:
         # surface.blit(img, surface.get_rect(center=(surface.get_width() // 2, surface.get_height() // 2)))
     
     def updateLines(self, btnId : int, displayedButtons : dict):
-        with open('.venv/dialogues/debugDialogue.json', 'r') as file:
+        with open('.venv/dialogues/athens.json', 'r') as file:
             tempArq = json.load(file)
         try:
             self.currentLine += 1

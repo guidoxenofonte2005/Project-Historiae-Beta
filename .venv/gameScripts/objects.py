@@ -30,7 +30,7 @@ class InteractiveObject:
             if action in self.possibleActions:
                 self.interactable = False
                 if action == "dialogue":
-                    with open(".venv/dialogues/debugDialogue.json", 'r') as file:
+                    with open(".venv/dialogues/athens.json", 'r') as file:
                         tempLines = json.load(file)
                     dialogueView.lines = tempLines[self.name]['1']["Dialogue"]
                     dialogueView.dialogueFile = dialogueFile
@@ -43,3 +43,26 @@ class InteractiveObject:
     
     def render(self, surface : pygame.Surface, offset : tuple):
         surface.blit(pygame.transform.flip(self.animation.image(), False, False), (self.position[0] - offset[0] - self.radius, self.position[1] - offset[1] - self.radius))
+
+class LevelSign(InteractiveObject):
+    def __init__(self, position, radius, possibleActions, game, name = "left"):
+        super().__init__(position, radius, possibleActions, game, name)
+        self.game = game
+    
+    def checkCollision(self, player, surface, coords):
+        if self.rect.colliderect(player.rect()):
+            self.interactable = True
+            surface.blit(self.button, [coords[0] + 10, coords[1] - 5])
+        else:
+            self.interactable = False
+        return self.interactable
+    
+    def interact(self, surface, offset, dialogueView, phase):
+        if self.interactable:
+            if self.name == "leftSign":
+                self.game.loadLevel(self.game.levelVar, -1)
+            else:
+                self.game.loadLevel(self.game.levelVar, -1)
+    
+    def render(self, surface, offset):
+        return super().render(surface, offset)

@@ -7,7 +7,7 @@ import pyautogui
 from gameScripts.utils import *
 from gameScripts.entities import Player
 from gameScripts.tilemap import Tilemap
-from gameScripts.objects import InteractiveObject
+from gameScripts.objects import InteractiveObject, LevelSign
 
 from gameScripts.dialogueView import DialogueView, QuizView
 
@@ -37,6 +37,8 @@ class Game:
             'player/suit' : Animation(load_images('characters/filip/suit'), 22),
             'debugCat' : Animation(load_images('animals/cat1'), 8),
             'debugCat2' : Animation(load_images('animals/cat2')),
+            'leftSign' : Animation(load_images('assets/placas/esq')),
+            'rightSign' : Animation(load_images('assets/placas/dir')),
             'marble' : load_images('tiles/'),
             'dialogueBox' : load_image('assets/dialogueBox.png'),
             'bkgMenu' : load_image('assets/bkgMenu.png'),
@@ -66,14 +68,18 @@ class Game:
         self.maxQuestions : int = 1
         self.buttonsOnScreen : dict = {}
 
-        self.currentLevel : str
-        self.levelVar : int
+        self.currentLevel : str = "athens"
+        self.levelVar : int = 3
         self.transition : int = 0
 
         self.interactableObjects = [
             InteractiveObject((10, 245), 37, ["dialogue"], self, 'debugCat'),
             InteractiveObject((80, 245), 41, ["dialogue"], self, 'debugCat2'),
             InteractiveObject((160, 254), 50, ["dialogue"], self, "returnStone")
+        ]
+        self.levelSigns = [
+            LevelSign((-70, 203), 40, [], self, "leftSign"),
+            LevelSign((10, 245), 40, [], self, "rightSign"),
         ]
 
         self.currentPhase : str = 'normal'
@@ -256,6 +262,13 @@ class Game:
                     for i in range(len(self.interactableObjects)):
                         self.interactableObjects[i].render(self.display, offset=renderScroll)
                         self.interactableObjects[i].animation.update()
+                    
+                    for i in range(len(self.levelSigns)):
+                        self.levelSigns[i].checkCollision(self.Player, self.display, (self.levelSigns[i].position[0] - self.scroll[0] - self.levelSigns[i].radius, self.levelSigns[i].position[1] - self.scroll[1] - self.levelSigns[i].radius))
+
+                    for i in range(len(self.levelSigns)):
+                        self.levelSigns[i].render(self.display, offset=renderScroll)
+                        self.levelSigns[i].animation.update()
 
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
@@ -277,6 +290,8 @@ class Game:
                                         if self.currentPhase != lastPhase:
                                             self.dialogueBox._setNpc_(self.interactableObjects[i].name)
                                             break
+                                    for i in range(len(self.levelSigns)):
+                                        self.levelSigns[i].interact(None, None, None, None)
                         if event.type == pygame.KEYUP:
                             match event.key:
                                 case pygame.K_LEFT:
