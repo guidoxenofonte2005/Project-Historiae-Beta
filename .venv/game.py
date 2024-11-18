@@ -86,6 +86,13 @@ class Game:
             LevelSign((250, 200), 40, [], self, "rightSign"),
         ]
 
+        self.objectsPerLevel = {
+            1 : [],
+            2 : [[self.interactableObjects[0], self.interactableObjects[1], self.interactableObjects[2]], 
+                 [self.levelSigns[0], self.levelSigns[1]]],
+            3 : [[self.interactableObjects[2]], [self.levelSigns[0]]]
+        }
+
         self.currentPhase : str = 'normal'
 
         self.ended : bool = False
@@ -238,12 +245,16 @@ class Game:
                     pygame.display.update()
                 case _:
                     time_delta = self.clock.tick(60)/1000.0
+
                     self.display.fill((28, 138, 217))
-                    self.display.blit(self.assets[f'background{self.currentLevel}{self.levelVar}'], (-140 - self.scroll[0], 2))
 
                     self.scroll[0] += (self.Player.rect().centerx - self.display.get_width() / 2 - self.scroll[0]) / 20
                     self.scroll[1] += (self.Player.rect().centery - self.display.get_height() / 1.6 - self.scroll[1]) / 15
-                    renderScroll = (int(self.scroll[0]), int(self.scroll[1]))
+
+                    self.testScroll = max(-145, min(self.scroll[0], 70))
+
+                    self.display.blit(self.assets[f'background{self.currentLevel}{self.levelVar}'], (-140 - self.testScroll, 2))
+                    renderScroll = (int(self.testScroll), int(self.scroll[1]))
 
                     match self.currentPhase:
                         case 'interacting':
@@ -259,21 +270,21 @@ class Game:
                     self.Player.update(self.tilemap, (self.movement[1] - self.movement[0], 0))
                     self.Player.render(self.display, offset=renderScroll)
 
-                    for i in range(len(self.interactableObjects)):
-                        self.dialogueBox.drawable = True if self.interactableObjects[i].checkCollision(self.Player, self.display, (self.interactableObjects[i].position[0] - self.scroll[0] - self.interactableObjects[i].radius, self.interactableObjects[i].position[1] - self.scroll[1] - self.interactableObjects[i].radius)) else False
+                    for i in range(len(self.objectsPerLevel[self.levelVar][0])):
+                        self.dialogueBox.drawable = True if self.objectsPerLevel[self.levelVar][0][i].checkCollision(self.Player, self.display, (self.objectsPerLevel[self.levelVar][0][i].position[0] - self.testScroll - self.objectsPerLevel[self.levelVar][0][i].radius, self.objectsPerLevel[self.levelVar][0][i].position[1] - self.scroll[1] - self.objectsPerLevel[self.levelVar][0][i].radius)) else False
                         if self.dialogueBox.drawable:
                             break
                     
-                    for i in range(len(self.interactableObjects)):
-                        self.interactableObjects[i].render(self.display, offset=renderScroll)
-                        self.interactableObjects[i].animation.update()
+                    for i in range(len(self.objectsPerLevel[self.levelVar][0])):
+                        self.objectsPerLevel[self.levelVar][0][i].render(self.display, offset=[self.testScroll, renderScroll[1]])
+                        self.objectsPerLevel[self.levelVar][0][i].animation.update()
                     
-                    for i in range(len(self.levelSigns)):
-                        self.levelSigns[i].checkCollision(self.Player, self.display, (self.levelSigns[i].position[0] - self.scroll[0] - self.levelSigns[i].radius, self.levelSigns[i].position[1] - self.scroll[1] - self.levelSigns[i].radius))
+                    for i in range(len(self.objectsPerLevel[self.levelVar][1])):
+                        self.objectsPerLevel[self.levelVar][1][i].checkCollision(self.Player, self.display, (self.objectsPerLevel[self.levelVar][1][i].position[0] - self.testScroll - self.objectsPerLevel[self.levelVar][1][i].radius, self.objectsPerLevel[self.levelVar][1][i].position[1] - self.scroll[1] - self.objectsPerLevel[self.levelVar][1][i].radius))
 
-                    for i in range(len(self.levelSigns)):
-                        self.levelSigns[i].render(self.display, offset=renderScroll)
-                        self.levelSigns[i].animation.update()
+                    for i in range(len(self.objectsPerLevel[self.levelVar][1])):
+                        self.objectsPerLevel[self.levelVar][1][i].render(self.display, offset=[self.testScroll, renderScroll[1]])
+                        self.objectsPerLevel[self.levelVar][1][i].animation.update()
 
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
@@ -288,15 +299,14 @@ class Game:
                                     if self.currentPhase != 'interacting':
                                         self.movement[1] = True
                                 case pygame.K_a:
-                                    # self.dialogueBox.update(self.display, (self.Player.position[0] - renderScroll[0], self.Player.position[1] - renderScroll[1]))
-                                    for i in range(len(self.interactableObjects)):
+                                    for i in range(len(self.objectsPerLevel[self.levelVar][0])):
                                         lastPhase = self.currentPhase
-                                        self.currentPhase = self.interactableObjects[i].interact(self.display, renderScroll, self.dialogueBox, phase=self.currentPhase)
+                                        self.currentPhase = self.objectsPerLevel[self.levelVar][0][i].interact(self.display, [self.testScroll, renderScroll[1]], self.dialogueBox, phase=self.currentPhase)
                                         if self.currentPhase != lastPhase:
-                                            self.dialogueBox._setNpc_(self.interactableObjects[i].name)
+                                            self.dialogueBox._setNpc_(self.objectsPerLevel[self.levelVar][0][i].name)
                                             break
-                                    for i in range(len(self.levelSigns)):
-                                        self.levelSigns[i].interact(None, None, None, None)
+                                    for i in range(len(self.objectsPerLevel[self.levelVar][1])):
+                                        self.objectsPerLevel[self.levelVar][1][i].interact(None, None, None, None)
                         if event.type == pygame.KEYUP:
                             match event.key:
                                 case pygame.K_LEFT:
