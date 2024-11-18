@@ -62,7 +62,7 @@ class LevelSign(InteractiveObject):
             if self.name == "leftSign":
                 self.game.loadLevel(self.game.levelVar, -1)
             else:
-                self.game.loadLevel(self.game.levelVar, -1)
+                self.game.loadLevel(self.game.levelVar, 1)
     
     def render(self, surface, offset):
         return super().render(surface, offset)

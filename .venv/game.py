@@ -46,6 +46,10 @@ class Game:
             'returnStone' : Animation(load_images('assets/returnStone'), 12),
             'quizLevel' : load_image('assets/auditorium.png'),
             'decor' : load_images('assets/moveis'),
+
+            # bkgs
+            'backgroundathens2' : load_image('backgrounds/athens2.png'),
+            'backgroundathens3' : load_image('backgrounds/athens2.png') # trocar
         }
 
         self.clock = pygame.time.Clock()
@@ -69,7 +73,7 @@ class Game:
         self.buttonsOnScreen : dict = {}
 
         self.currentLevel : str = "athens"
-        self.levelVar : int = 3
+        self.levelVar : int = 2
         self.transition : int = 0
 
         self.interactableObjects = [
@@ -79,7 +83,7 @@ class Game:
         ]
         self.levelSigns = [
             LevelSign((-70, 203), 40, [], self, "leftSign"),
-            LevelSign((10, 245), 40, [], self, "rightSign"),
+            LevelSign((250, 200), 40, [], self, "rightSign"),
         ]
 
         self.currentPhase : str = 'normal'
@@ -235,6 +239,7 @@ class Game:
                 case _:
                     time_delta = self.clock.tick(60)/1000.0
                     self.display.fill((28, 138, 217))
+                    self.display.blit(self.assets[f'background{self.currentLevel}{self.levelVar}'], (-140 - self.scroll[0], 2))
 
                     self.scroll[0] += (self.Player.rect().centerx - self.display.get_width() / 2 - self.scroll[0]) / 20
                     self.scroll[1] += (self.Player.rect().centery - self.display.get_height() / 1.6 - self.scroll[1]) / 15
