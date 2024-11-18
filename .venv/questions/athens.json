@@ -1,20 +1,54 @@
 {
     "1" : {
-        "Question" : "Teste testando coisas",
+        "Question" : "Quais os deuses mais presentes na cultura e\nreligiao atenienses?",
         "1" : {
-            "Text" : "Oie",
+            "Text" : "Ares, Hera e Zeus",
             "Answer" : false
         },
         "2" : {
-            "Text" : "Oie",
+            "Text" : "Hera, Poseidon e Atena",
             "Answer" : false
         },
         "3" : {
-            "Text" : "Tchau",
+            "Text" : "Atena, Zeus e Dionisio",
             "Answer" : true
         },
         "4" : {
-            "Text" : "Oie",
+            "Text" : "Atena, Artemis e Apolo",
+            "Answer" : false
+        }
+    },
+    "2" : {
+        "Question" : "Quais as principais influencias modernas dei-\nxadas pela civilizacao ateniense?",
+        "1" : {
+            "Text" : "Agricultura e politica",
+            "Answer" : false
+        },
+        "2" : {
+            "Text" : "Democracia e filosofia",
+            "Answer" : true
+        },
+        "3" : {
+            "Text" : "Matematica e religiao",
+            "Answer" : false
+        },
+        "4" : {
+            "Text" : "Diplomacia e navegacao",
+            "Answer" : false
+        }
+    },
+    "3" : {
+        "Question" : "Qual a forma de divisao social dos atenienses?",
+        "1" : {
+            "Text" : "Cidadaos, metecos e escravos",
+            "Answer" : true
+        },
+        "2" : {
+            "Text" : "Cidadaos, periecos e hilotas",
+            "Answer" : false
+        },
+        "3" : {
+            "Text" : "Espartiatas, hilotas e escravos",
             "Answer" : false
         }
     }

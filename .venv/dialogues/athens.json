@@ -23,5 +23,10 @@
             "1" : "Yes, sure!",
             "2" : "No, I'll come back later..."
         }
+    },
+    "oldMan" : {
+        "1" : {
+            "Dialogue" : "Beautiful day, ain't it?"
+        }
     }
 }

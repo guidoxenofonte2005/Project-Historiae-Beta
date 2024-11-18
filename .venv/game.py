@@ -47,6 +47,9 @@ class Game:
             'quizLevel' : load_image('assets/auditorium.png'),
             'decor' : load_images('assets/moveis'),
 
+            # npcs
+            'oldMan' : Animation(load_images('characters/oldMan'), 50),
+
             # bkgs
             'backgroundathens2' : load_image('backgrounds/athens2.png'),
             'backgroundathens3' : load_image('backgrounds/athens2.png') # trocar
@@ -69,7 +72,7 @@ class Game:
         self.quizBox = QuizView('')
         self.correctQuestions : int = 0
         self.questionNum : int = 1
-        self.maxQuestions : int = 1
+        self.maxQuestions : int = 3
         self.buttonsOnScreen : dict = {}
 
         self.currentLevel : str = "athens"
@@ -79,7 +82,8 @@ class Game:
         self.interactableObjects = [
             InteractiveObject((10, 245), 37, ["dialogue"], self, 'debugCat'),
             InteractiveObject((80, 245), 41, ["dialogue"], self, 'debugCat2'),
-            InteractiveObject((160, 254), 50, ["dialogue"], self, "returnStone")
+            InteractiveObject((160, 254), 50, ["dialogue"], self, "returnStone"),
+            InteractiveObject((200, 214), 50, ["dialogue"], self, "oldMan"),
         ]
         self.levelSigns = [
             LevelSign((-70, 203), 40, [], self, "leftSign"),
@@ -87,8 +91,8 @@ class Game:
         ]
 
         self.objectsPerLevel = {
-            1 : [],
-            2 : [[self.interactableObjects[0], self.interactableObjects[1], self.interactableObjects[2]], 
+            1 : [[None], [None]],
+            2 : [[self.interactableObjects[0], self.interactableObjects[1], self.interactableObjects[2], self.interactableObjects[3]], 
                  [self.levelSigns[0], self.levelSigns[1]]],
             3 : [[self.interactableObjects[2]], [self.levelSigns[0]]]
         }
