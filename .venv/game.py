@@ -87,11 +87,11 @@ class Game:
         ]
         self.levelSigns = [
             LevelSign((-70, 203), 40, [], self, "leftSign"),
-            LevelSign((250, 200), 40, [], self, "rightSign"),
+            LevelSign((350, 200), 40, [], self, "rightSign"),
         ]
 
         self.objectsPerLevel = {
-            1 : [[None], [None]],
+            1 : [[self.interactableObjects[2]], [self.levelSigns[1]]],
             2 : [[self.interactableObjects[0], self.interactableObjects[1], self.interactableObjects[2], self.interactableObjects[3]], 
                  [self.levelSigns[0], self.levelSigns[1]]],
             3 : [[self.interactableObjects[2]], [self.levelSigns[0]]]
@@ -166,9 +166,11 @@ class Game:
             case 1:
                 self.tilemap.load(f".venv/maps/{self.currentLevel}{str(pastLevelId + 1)}.json")
                 self.levelVar = pastLevelId + 1
+                self.Player.position[0] = self.levelSigns[0].position[0]
             case -1:
                 self.tilemap.load(f".venv/maps/{self.currentLevel}{str(pastLevelId - 1)}.json")
                 self.levelVar = pastLevelId - 1
+                self.Player.position[0] = self.levelSigns[1].position[0]
             case _:
                 self.tilemap.load(f".venv/maps/{self.currentLevel}{str(pastLevelId + customDirection)}.json")
                 self.levelVar = pastLevelId + customDirection
