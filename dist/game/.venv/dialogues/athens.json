@@ -1,0 +1,130 @@
+{
+    "debugCat": {
+        "1" : {
+            "Dialogue" : "Meow :3"
+        }
+    },
+    "debugCat2" : {
+        "1" : {
+            "Dialogue" : "Test characters\n123456789012345678901234567890123456789012345678901\n234567890"
+        }
+    },
+    "returnStone" : {
+        "1" : {
+            "Dialogue" : "Deseja voltar ao mundo normal e testar seu\nconhecimento?",
+            "1" : "Sim, claro!",
+            "2" : "Acho que volto depois..."
+        }
+    },
+    "oldMan" : {
+        "1" : {
+            "Dialogue" : "Voce e novo por aqui? Muito prazer!",
+            "1" : "Que lugares posso ver aqui?",
+            "2" : "Ate logo!"
+        },
+        "2.1" : {
+            "Dialogue" : "Deixe-me ver... existem tres lugares principais:\na Acropole, o Areopago onde nos estamos agora\ne a Agora. Visite-os quando quiser."
+        },
+        "2.2" : {
+            "Dialogue" : "Ate mais!"
+        }
+    },
+    "merchant1" : {
+        "1" : {
+            "Dialogue" : "Quer alguma coisa?",
+            "1" : "O que voce faz?",
+            "2" : "Pra que serve esse lugar?",
+            "3" : "Quao importante voces sao aqui?",
+            "4" : "Nao, obrigado."
+        },
+        "2.1" : {
+            "Dialogue" : "Caso nao esteja vendo, estou vendendo minhas\nmercadorias. Sou um meteco, ora, nao e obvio\n o que estou fazendo?!"
+        },
+        "2.2" : { 
+            "Dialogue" : "Alguns vem pra debater, outros pra comprar, outros\npra passar o tempo... Tem o templo de Hefesto\nem cima do morro, mas o lugar mais importante\npra religiao e a Acropole. Devia ir la."
+        },
+        "2.3" : {
+            "Dialogue" : "A economia nao e o forte da cidade... o povo da\nmuito mais atencao a politica, filosofia, matematica\n... Com escravos fica tudo muito facil..."
+        },
+        "2.4" : {
+            "Dialogue" : "Hmpf... Cada um que me aparece..."
+        }
+    },
+    "merchant2" : {
+        "1" : {
+            "Dialogue" : "Perdoe meu colega... ele e meio estressado...",
+            "1" : "Tem alguma coisa interessante na cidade?",
+            "2" : "Voce acredita nos deuses?",
+            "3" : "Voces sao da cidade?",
+            "4" : "Nao, obrigado."
+        },
+        "2.1" : {
+            "Dialogue" : "Deixe-me pensar... temos as Panateneias, mas nao\ngosto muito das competicoes, gosto mais da religiao.\nOs jogos de Olimpia sao MUITO melhores nisso...\nDe resto, voce pode visitar a cidade e ver por sua\nconta."
+        },
+        "2.2" : { 
+            "Dialogue" : "Claro que sim. Mas nao conheco as historias direito...\nCaso queira saber mais, acho que a Acropole\nseria um bom lugar a visitar."
+        },
+        "2.3" : {
+            "Dialogue" : "Infelizmente nao... nao somos escravos, mas\nainda assim a situacao nao e tao boa sem a cidadania\nateniense... Mas temos levado a vida."
+        },
+        "2.4" : {
+            "Dialogue" : "Volte sempre!"
+        }
+    },
+    "unknownGod" : {
+        "1" : {
+            "Dialogue" : "\"Altar ao deus desconhecido\""
+        }
+    },
+    "wise" : {
+        "1" : {
+            "Dialogue" : "Pergunte-me qualquer coisa, meu querido, e eu\ntentarei responder da melhor forma.",
+            "1" : "Voce e mesmo tao sabio assim?",
+            "2" : "Essa cidade tem algum governo?",
+            "3" : "Ate mais."
+        },
+        "2.1" : {
+            "Dialogue" : "Hahaha... claro, meu querido. Sou um cidadao ateniense.\nEstudo desde pequeno as mais diversas areas do\nconhecimento, principalmente filosofia.\nVamos, pergunte-me mais!"
+        },
+        "2.2" : { 
+            "Dialogue" : "O melhor de todos: o povo! Todos os cidadaos participam\ndas decisoes. Temos assembleias, discussoes...\nVeja como prosperamos!"
+        },
+        "2.3" : {
+            "Dialogue" : "Minha sabedoria foi demais pra voce?"
+        }
+    },
+    "sacerdote1" : {
+        "1" : {
+            "Dialogue" : "Ola viajante. Fique a vontade.",
+            "1" : "Quais sao os deuses patronos daqui?",
+            "2" : "Onde estamos?",
+            "3" : "Adeus"
+        },
+        "2.1" : {
+            "Dialogue" : "Ora, um religioso? Pois bem, o Olimpo inteiro esta\npresente na cidade, mas temos tres grandes nomes:\nZeus, senhor dos raios; Dionisio, rei das festas;\ne claro, aquela que deu nome a cidade: Atena, a sabia."
+        },
+        "2.2" : {
+            "Dialogue" : "Nao enxerga? O grande Parthenon de Atenas?\nEnfim... essa e a Acropole da cidade, lugar mais\nimportante religiosamente falando...\n(que pergunta, nao e obvio...?)"
+        },
+        "2.3" : {
+            "Dialogue" : "Ate."
+        }
+    },
+    "sacerdote2" : {
+        "1" : {
+            "Dialogue" : "Boa tarde, jovem. O que deseja?",
+            "1" : "Como essa cidade foi criada?",
+            "2" : "Como os sabios aprenderam tudo aqui?",
+            "3" : "Ate outra hora"
+        },
+        "2.1" : {
+            "Dialogue" : "Ora ora, alguem se interessa por historia! Pois\nbem, a cidade foi criada ha eons, quando Atena\nvenceu uma disputa pelo patronado da cidade contra\nPoseidon. O deus dos mares criou uma fonte de agua\nsalgada, enquanto a sabia deusa criou a oliveira."
+        },
+        "2.2" : {
+            "Dialogue" : "Nosso povo se orgulha de sua sabedoria.\nValorizamos cada parte do ensino, fisico ou mental.\nComo bons seguidores da deusa da sabedoria,\nos mais novos comecam a aprender matematica,\nleitura e filosofia desde cedo, alem de passar\npor treinos intensos."
+        },
+        "2.3" : {
+            "Dialogue" : "Adeus!"
+        }
+    }
+}
