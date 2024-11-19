@@ -44,15 +44,22 @@ class Game:
             'bkgMenu' : load_image('assets/bkgMenu.png'),
             'title' : load_image('assets/title_with_logo.png'),
             'returnStone' : Animation(load_images('assets/returnStone'), 12),
+            'unknownGod' : Animation(load_images('assets/moveisObjetos')),
             'quizLevel' : load_image('assets/auditorium.png'),
             'decor' : load_images('assets/moveis'),
 
             # npcs
             'oldMan' : Animation(load_images('characters/oldMan'), 50),
+            'merchant1' : Animation(load_images('characters/merchant'), 50),
+            'merchant2' : Animation(load_images('characters/merchant'), 50),
+            'wise' : Animation(load_images('characters/wise'), 50),
+            'sacerdote1' : Animation(load_images('characters/wise'), 50),
+            'sacerdote2' : Animation(load_images('characters/wise'), 50),
 
             # bkgs
+            'backgroundathens1' : load_image('backgrounds/athens1.png'),
             'backgroundathens2' : load_image('backgrounds/athens2.png'),
-            'backgroundathens3' : load_image('backgrounds/athens2.png') # trocar
+            'backgroundathens3' : load_image('backgrounds/athens3.png') # trocar
         }
 
         self.clock = pygame.time.Clock()
@@ -83,7 +90,13 @@ class Game:
             InteractiveObject((10, 245), 37, ["dialogue"], self, 'debugCat'),
             InteractiveObject((80, 245), 41, ["dialogue"], self, 'debugCat2'),
             InteractiveObject((160, 254), 50, ["dialogue"], self, "returnStone"),
-            InteractiveObject((200, 214), 50, ["dialogue"], self, "oldMan"),
+            InteractiveObject((220, 214), 50, ["dialogue"], self, "oldMan"),
+            InteractiveObject((80, 214), 50, ["dialogue"], self, "merchant1"),
+            InteractiveObject((130, 214), 50, ["dialogue"], self, "merchant2"),
+            InteractiveObject((280, 201), 40, ["dialogue"], self, "unknownGod"),
+            InteractiveObject((100, 210), 50, ['dialogue'], self, "wise"),
+            InteractiveObject((100, 210), 50, ['dialogue'], self, "sacerdote1"),
+            InteractiveObject((210, 210), 50, ['dialogue'], self, "sacerdote2")
         ]
         self.levelSigns = [
             LevelSign((-70, 203), 40, [], self, "leftSign"),
@@ -91,10 +104,9 @@ class Game:
         ]
 
         self.objectsPerLevel = {
-            1 : [[self.interactableObjects[2]], [self.levelSigns[1]]],
-            2 : [[self.interactableObjects[0], self.interactableObjects[1], self.interactableObjects[2], self.interactableObjects[3]], 
-                 [self.levelSigns[0], self.levelSigns[1]]],
-            3 : [[self.interactableObjects[2]], [self.levelSigns[0]]]
+            1 : [[self.interactableObjects[4], self.interactableObjects[5]], [self.levelSigns[0], self.levelSigns[1]]],
+            2 : [[self.interactableObjects[0], self.interactableObjects[2], self.interactableObjects[3], self.interactableObjects[6], self.interactableObjects[7]], [self.levelSigns[0], self.levelSigns[1]]],
+            3 : [[self.interactableObjects[8], self.interactableObjects[9]], [self.levelSigns[0]]]
         }
 
         self.currentPhase : str = 'normal'
@@ -259,7 +271,11 @@ class Game:
 
                     self.testScroll = max(-145, min(self.scroll[0], 70))
 
-                    self.display.blit(self.assets[f'background{self.currentLevel}{self.levelVar}'], (-140 - self.testScroll, 2))
+                    if self.levelVar == 1:
+                        self.display.blit(pygame.transform.scale(self.assets[f'background{self.currentLevel}{self.levelVar}'], [560, 180]), (-160 - self.testScroll, 2))
+                    else:
+                        self.display.blit(self.assets[f'background{self.currentLevel}{self.levelVar}'], (-140 - self.testScroll, 2))
+                    
                     renderScroll = (int(self.testScroll), int(self.scroll[1]))
 
                     match self.currentPhase:
@@ -286,11 +302,18 @@ class Game:
                         self.objectsPerLevel[self.levelVar][0][i].animation.update()
                     
                     for i in range(len(self.objectsPerLevel[self.levelVar][1])):
-                        self.objectsPerLevel[self.levelVar][1][i].checkCollision(self.Player, self.display, (self.objectsPerLevel[self.levelVar][1][i].position[0] - self.testScroll - self.objectsPerLevel[self.levelVar][1][i].radius, self.objectsPerLevel[self.levelVar][1][i].position[1] - self.scroll[1] - self.objectsPerLevel[self.levelVar][1][i].radius))
+                        if self.levelVar == 1:
+                            self.objectsPerLevel[self.levelVar][1][i].checkCollision(self.Player, self.display, (self.objectsPerLevel[self.levelVar][1][1].position[0] - self.testScroll - self.objectsPerLevel[self.levelVar][1][1].radius, self.objectsPerLevel[self.levelVar][1][1].position[1] - self.scroll[1] - self.objectsPerLevel[self.levelVar][1][1].radius))
+                        else:
+                            self.objectsPerLevel[self.levelVar][1][i].checkCollision(self.Player, self.display, (self.objectsPerLevel[self.levelVar][1][i].position[0] - self.testScroll - self.objectsPerLevel[self.levelVar][1][i].radius, self.objectsPerLevel[self.levelVar][1][i].position[1] - self.scroll[1] - self.objectsPerLevel[self.levelVar][1][i].radius))
 
                     for i in range(len(self.objectsPerLevel[self.levelVar][1])):
-                        self.objectsPerLevel[self.levelVar][1][i].render(self.display, offset=[self.testScroll, renderScroll[1]])
-                        self.objectsPerLevel[self.levelVar][1][i].animation.update()
+                        if self.levelVar == 1:
+                            self.objectsPerLevel[self.levelVar][1][1].render(self.display, offset=[self.testScroll, renderScroll[1]])
+                            self.objectsPerLevel[self.levelVar][1][1].animation.update()
+                        else:
+                            self.objectsPerLevel[self.levelVar][1][i].render(self.display, offset=[self.testScroll, renderScroll[1]])
+                            self.objectsPerLevel[self.levelVar][1][i].animation.update()
 
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
@@ -311,8 +334,12 @@ class Game:
                                         if self.currentPhase != lastPhase:
                                             self.dialogueBox._setNpc_(self.objectsPerLevel[self.levelVar][0][i].name)
                                             break
-                                    for i in range(len(self.objectsPerLevel[self.levelVar][1])):
-                                        self.objectsPerLevel[self.levelVar][1][i].interact(None, None, None, None)
+                                    if self.levelVar == 1:
+                                        for i in range(len(self.objectsPerLevel[self.levelVar][1])):
+                                            self.objectsPerLevel[self.levelVar][1][1].interact(None, None, None, None)
+                                    else:
+                                        for i in range(len(self.objectsPerLevel[self.levelVar][1])):
+                                            self.objectsPerLevel[self.levelVar][1][i].interact(None, None, None, None)
                         if event.type == pygame.KEYUP:
                             match event.key:
                                 case pygame.K_LEFT:

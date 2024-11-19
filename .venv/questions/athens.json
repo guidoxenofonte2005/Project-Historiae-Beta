@@ -51,5 +51,73 @@
             "Text" : "Espartiatas, hilotas e escravos",
             "Answer" : false
         }
+    },
+    "4" : {
+        "Question" : "Havia educacao na sociedade ateniense?\nSe sim, que areas?",
+        "1" : {
+            "Text" : "Leitura, matematica e aptidao fisica",
+            "Answer" : true
+        },
+        "2" : {
+            "Text" : "Nao havia educacao acessivel",
+            "Answer" : false
+        },
+        "3" : {
+            "Text" : "Agricultura, politica e filosofia",
+            "Answer" : false
+        }
+    },
+    "5" : {
+        "Question" : "Como era a forma de governo ateniense?",
+        "1" : {
+            "Text" : "Democracia indireta",
+            "Answer" : false
+        },
+        "2" : {
+            "Text" : "Democracia indireta",
+            "Answer" : true
+        },
+        "3" : {
+            "Text" : "Imperialismo",
+            "Answer" : false
+        },
+        "4" : {
+            "Text" : "Monarquia",
+            "Answer" : false
+        }
+    },
+    "6" : {
+        "Question" : "No mito de origem da cidade, quais deuses\ndisputavam por ela?",
+        "1" : {
+            "Text" : "Hera e Atena",
+            "Answer" : false
+        },
+        "2" : {
+            "Text" : "Atena e Zeus",
+            "Answer" : false
+        },
+        "3" : {
+            "Text" : "Atena e Poseidon",
+            "Answer" : true
+        },
+        "4" : {
+            "Text" : "Hera e Afrodite",
+            "Answer" : false
+        }
+    },
+    "7" : {
+        "Question" : "Qual o principal lugar religioso da\ncidade?",
+        "1" : {
+            "Text" : "Acropole",
+            "Answer" : true
+        },
+        "2" : {
+            "Text" : "Agora",
+            "Answer" : false
+        },
+        "3" : {
+            "Text" : "Areopago",
+            "Answer" : false
+        }
     }
 }
