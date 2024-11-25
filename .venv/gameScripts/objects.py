@@ -60,7 +60,7 @@ class LevelSign(InteractiveObject):
     def interact(self, surface, offset, dialogueView, phase):
         if self.interactable:
             if self.name == "leftSign":
-                self.game.loadLevel(self.game.levelVar, -1)
+                self.game.loadLevel(self.game.levelVar, -1) 
             else:
                 self.game.loadLevel(self.game.levelVar, 1)
     

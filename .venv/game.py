@@ -17,6 +17,7 @@ import json
 
 class Game:
     def __init__(self) -> None:
+        pygame.mixer.pre_init(48000, -16, 2, 1024)
         pygame.init()
     
         self.screen : pygame.Surface = pygame.display.set_mode((0, 0), flags = pygame.RESIZABLE)
@@ -133,11 +134,10 @@ class Game:
                             lines = "JOGAR"
                         case 1:
                             lines = "SAIR"
-                    tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 40) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.ttf", 32)
+                    tempFont = pygame.font.Font(".venv/fonts/Monocraft.otf", 40) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.otf", 32)
                     textRect = tempFont.render(lines, True, (0,0,0)).get_rect()
                     btnSize = (textRect.width + 80, 80)
                     self.buttonsOnScreen[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect((self.screen.get_width() // 2) - (btnSize[0] // 2), (self.screen.get_height() // 2 + 90)+120*i, btnSize[0], btnSize[1]), lines, self.guiManager, object_id="buttonMenu")
-                print(self.buttonsOnScreen)
 
             self.display.blit(self.assets['bkgMenu'])
 
@@ -188,11 +188,10 @@ class Game:
                 self.levelVar = pastLevelId + customDirection
         self.transition = -30
 
-    def __loadCustomLevel__(self, levelName):
-        self.tilemap.load(f".venv/maps/{levelName}.json")
-        self.transition = -30
-
     def run(self):
+        pygame.mixer.music.load('.venv/music/menuSong.wav')
+        pygame.mixer.music.play(-1)
+
         while not self.ended:
             match self.currentPhase:
                 case 'finalQuiz':
@@ -234,9 +233,8 @@ class Game:
                         if event.type == pygame_gui.UI_BUTTON_PRESSED:
                             for label, btn in self.buttonsOnScreen.copy().items():
                                 if event.ui_element == btn:
-                                    with open('.venv/questions/athens.json', 'r') as file:
+                                    with open('.venv/questions/athens.json', 'r') as file:  
                                         tempArq = json.load(file)
-                                    print(tempArq[str(self.questionNum)][str(int(label[-1]))]["Answer"])
                                     if tempArq[str(self.questionNum)][str(int(label[-1]))]["Answer"] == True:
                                         self.correctQuestions += 1
                                     self.quizBox.updateLines(int(label[-1]), self.buttonsOnScreen)
@@ -328,18 +326,19 @@ class Game:
                                     if self.currentPhase != 'interacting':
                                         self.movement[1] = True
                                 case pygame.K_a:
-                                    for i in range(len(self.objectsPerLevel[self.levelVar][0])):
-                                        lastPhase = self.currentPhase
-                                        self.currentPhase = self.objectsPerLevel[self.levelVar][0][i].interact(self.display, [self.testScroll, renderScroll[1]], self.dialogueBox, phase=self.currentPhase)
-                                        if self.currentPhase != lastPhase:
-                                            self.dialogueBox._setNpc_(self.objectsPerLevel[self.levelVar][0][i].name)
-                                            break
-                                    if self.levelVar == 1:
-                                        for i in range(len(self.objectsPerLevel[self.levelVar][1])):
-                                            self.objectsPerLevel[self.levelVar][1][1].interact(None, None, None, None)
-                                    else:
-                                        for i in range(len(self.objectsPerLevel[self.levelVar][1])):
-                                            self.objectsPerLevel[self.levelVar][1][i].interact(None, None, None, None)
+                                    if self.currentPhase != 'interacting':
+                                        for i in range(len(self.objectsPerLevel[self.levelVar][0])):
+                                            lastPhase = self.currentPhase
+                                            self.currentPhase = self.objectsPerLevel[self.levelVar][0][i].interact(self.display, [self.testScroll, renderScroll[1]], self.dialogueBox, phase=self.currentPhase)
+                                            if self.currentPhase != lastPhase:
+                                                self.dialogueBox._setNpc_(self.objectsPerLevel[self.levelVar][0][i].name)
+                                                break
+                                        if self.levelVar == 1:
+                                            for i in range(len(self.objectsPerLevel[self.levelVar][1])):
+                                                self.objectsPerLevel[self.levelVar][1][1].interact(None, None, None, None)
+                                        else:
+                                            for i in range(len(self.objectsPerLevel[self.levelVar][1])):
+                                                self.objectsPerLevel[self.levelVar][1][i].interact(None, None, None, None)
                         if event.type == pygame.KEYUP:
                             match event.key:
                                 case pygame.K_LEFT:
@@ -367,6 +366,9 @@ class Game:
                             if self.currentPhase == 'changeAreaToQuiz':
                                 self.currentPhase = 'finalQuiz'
                                 self.tilemap.load(f".venv/maps/finalQuiz.json")
+                                pygame.mixer.music.stop()
+                                pygame.mixer.music.load('.venv/music/quiz.wav')
+                                pygame.mixer.music.play(-1)
                     if self.transition:
                         self._runTransition_()
 
@@ -384,7 +386,7 @@ class Game:
         while True:
             if not self.buttonsOnScreen:
                 lines = "SAIR"
-                tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 40) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.ttf", 32)
+                tempFont = pygame.font.Font(".venv/fonts/Monocraft.otf", 40) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.otf", 32)
                 textRect = tempFont.render(lines, True, (0,0,0)).get_rect()
                 btnSize = (textRect.width + 80, 80)
                 self.buttonsOnScreen[f'btn{i+1}'] = pygame_gui.elements.UIButton(pygame.Rect((self.screen.get_width() // 2) - (btnSize[0] // 2), (self.screen.get_height() // 2 + 200), btnSize[0], btnSize[1]), lines, self.guiManager, object_id="buttonMenu")
@@ -393,7 +395,7 @@ class Game:
 
             text = f'Thanks for playing! >:D\nYour score was {self.correctQuestions}.'
             font = pygame.freetype.SysFont("Monocraft", 24) if pyautogui.size()[0] >= 1920 else pygame.freetype.SysFont("Monocraft", 16)
-            tempFont = pygame.font.Font(".venv/fonts/Monocraft.ttf", 24) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.ttf", 16)
+            tempFont = pygame.font.Font(".venv/fonts/Monocraft.otf", 24) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.otf", 16)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
