@@ -117,6 +117,3 @@ class Player(PhysicsEntity):
             self.setAction('walk')
         else:
             self.setAction('idle')
-
-    # def jump(self):
-    #     self.velocity[1] = -3
