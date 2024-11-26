@@ -1,26 +1,11 @@
 # Project Historiae
 
-### Currently available:
-- Basic movement
-- Object interaction (output currently via terminal)
-- Tilemap editor/tileset system
-- Collision system
-### In development:
-- Concept arts
-- Backgrounds
-- "World map"
-### Future updates will include:
-- Better graphics
-- Sounds
-- Better interaction system
-- Original soundtrack
-_______________________
-## Executing:
-### The game:
-> - Open the project in VS Code (or any IDE)
-> - Execute the ***game.py*** file
-> - Test the demo :D
-### The tilemap editor:
-> - Open the project in VS Code (or any IDE)
-> - Execute the ***editor.py*** file
-> - Explore the editor :D
+### How to run the game
+> - Download the repo as .zip
+> - Unzip the main folder
+> - To run the game as code:
+> - - Open the game.py file
+> - - Run
+> - To run the .exe:
+> - - Open the dist/game folder
+>   - Run the .exe file
