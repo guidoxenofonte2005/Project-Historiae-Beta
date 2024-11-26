@@ -190,7 +190,7 @@ class Game:
 
     def run(self):
         pygame.mixer.music.load('.venv/music/menuSong.wav')
-        pygame.mixer.music.set_volume(0.4)
+        pygame.mixer.music.set_volume(0.2)
         pygame.mixer.music.play(-1)
 
         while not self.ended:
@@ -241,6 +241,7 @@ class Game:
                                         sfx = pygame.mixer.Sound('.venv/music/CorrectSfx.wav')
                                     else:
                                         sfx = pygame.mixer.Sound('.venv/music/WrongSfx.wav')
+                                    sfx.set_volume(1.0)
                                     sfx.play(loops=0)
                                     pygame.time.wait(500)
                                     sfx.stop()
@@ -380,7 +381,7 @@ class Game:
                                 self.tilemap.load(f".venv/maps/finalQuiz.json")
                                 pygame.mixer.music.stop()
                                 pygame.mixer.music.load('.venv/music/quiz.wav')
-                                pygame.mixer.music.set_volume(0.4)
+                                pygame.mixer.music.set_volume(0.2)
                                 pygame.mixer.music.play(-1)
                     if self.transition:
                         self._runTransition_()

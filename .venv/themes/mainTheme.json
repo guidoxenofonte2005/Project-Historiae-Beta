@@ -3,7 +3,7 @@
         "font" : {
             "name" : "Monocraft",
             "size" : 16,
-            "path" : ".venv/fonts/Monocraft.ttf"
+            "path" : ".venv/fonts/Monocraft.otf"
         },
         "colours" : {
             "normal_bg": "#CD7F32",
@@ -20,7 +20,7 @@
         "font" : {
             "name" : "Monocraft",
             "size" : 40,
-            "path" : ".venv/fonts/Monocraft.ttf"
+            "path" : ".venv/fonts/Monocraft.otf"
         },
         "colours" : {
             "normal_bg": "#CD7F32",
