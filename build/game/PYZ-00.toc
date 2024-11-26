@@ -1,0 +1,1511 @@
+('C:\\Users\\Guido e '
+ 'Ageu\\Documents\\GitHub\\Project-Historiae-Beta\\build\\game\\PYZ-00.pyz',
+ [('__future__',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\__future__.py',
+   'PYMODULE'),
+  ('_aix_support',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_aix_support.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('_compression',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_compression.py',
+   'PYMODULE'),
+  ('_markupbase',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_markupbase.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('_pydatetime',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_pydatetime.py',
+   'PYMODULE'),
+  ('_pydecimal',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_pydecimal.py',
+   'PYMODULE'),
+  ('_strptime',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_strptime.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_threading_local.py',
+   'PYMODULE'),
+  ('argparse',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\argparse.py',
+   'PYMODULE'),
+  ('ast',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ast.py',
+   'PYMODULE'),
+  ('asyncio',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\__init__.py',
+   'PYMODULE'),
+  ('asyncio.base_events',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\base_events.py',
+   'PYMODULE'),
+  ('asyncio.base_futures',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\base_futures.py',
+   'PYMODULE'),
+  ('asyncio.base_subprocess',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\base_subprocess.py',
+   'PYMODULE'),
+  ('asyncio.base_tasks',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\base_tasks.py',
+   'PYMODULE'),
+  ('asyncio.constants',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\constants.py',
+   'PYMODULE'),
+  ('asyncio.coroutines',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\coroutines.py',
+   'PYMODULE'),
+  ('asyncio.events',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\events.py',
+   'PYMODULE'),
+  ('asyncio.exceptions',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\exceptions.py',
+   'PYMODULE'),
+  ('asyncio.format_helpers',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\format_helpers.py',
+   'PYMODULE'),
+  ('asyncio.futures',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\futures.py',
+   'PYMODULE'),
+  ('asyncio.locks',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\locks.py',
+   'PYMODULE'),
+  ('asyncio.log',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\log.py',
+   'PYMODULE'),
+  ('asyncio.mixins',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\mixins.py',
+   'PYMODULE'),
+  ('asyncio.proactor_events',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\proactor_events.py',
+   'PYMODULE'),
+  ('asyncio.protocols',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\protocols.py',
+   'PYMODULE'),
+  ('asyncio.queues',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\queues.py',
+   'PYMODULE'),
+  ('asyncio.runners',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\runners.py',
+   'PYMODULE'),
+  ('asyncio.selector_events',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\selector_events.py',
+   'PYMODULE'),
+  ('asyncio.sslproto',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\sslproto.py',
+   'PYMODULE'),
+  ('asyncio.staggered',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\staggered.py',
+   'PYMODULE'),
+  ('asyncio.streams',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\streams.py',
+   'PYMODULE'),
+  ('asyncio.subprocess',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\subprocess.py',
+   'PYMODULE'),
+  ('asyncio.taskgroups',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\taskgroups.py',
+   'PYMODULE'),
+  ('asyncio.tasks',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\tasks.py',
+   'PYMODULE'),
+  ('asyncio.threads',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\threads.py',
+   'PYMODULE'),
+  ('asyncio.timeouts',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\timeouts.py',
+   'PYMODULE'),
+  ('asyncio.transports',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\transports.py',
+   'PYMODULE'),
+  ('asyncio.trsock',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\trsock.py',
+   'PYMODULE'),
+  ('asyncio.unix_events',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\unix_events.py',
+   'PYMODULE'),
+  ('asyncio.windows_events',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\windows_events.py',
+   'PYMODULE'),
+  ('asyncio.windows_utils',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\windows_utils.py',
+   'PYMODULE'),
+  ('base64',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\base64.py',
+   'PYMODULE'),
+  ('bdb',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\bdb.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\bisect.py',
+   'PYMODULE'),
+  ('bz2',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\bz2.py',
+   'PYMODULE'),
+  ('calendar',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\calendar.py',
+   'PYMODULE'),
+  ('cmd',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\cmd.py',
+   'PYMODULE'),
+  ('code',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\code.py',
+   'PYMODULE'),
+  ('codeop',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\codeop.py',
+   'PYMODULE'),
+  ('concurrent',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\concurrent\\__init__.py',
+   'PYMODULE'),
+  ('concurrent.futures',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\concurrent\\futures\\__init__.py',
+   'PYMODULE'),
+  ('concurrent.futures._base',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\concurrent\\futures\\_base.py',
+   'PYMODULE'),
+  ('concurrent.futures.process',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\concurrent\\futures\\process.py',
+   'PYMODULE'),
+  ('concurrent.futures.thread',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\concurrent\\futures\\thread.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\contextlib.py',
+   'PYMODULE'),
+  ('contextvars',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\contextvars.py',
+   'PYMODULE'),
+  ('copy',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\copy.py',
+   'PYMODULE'),
+  ('csv',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\csv.py',
+   'PYMODULE'),
+  ('ctypes',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ctypes\\__init__.py',
+   'PYMODULE'),
+  ('ctypes._aix',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ctypes\\_aix.py',
+   'PYMODULE'),
+  ('ctypes._endian',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ctypes\\_endian.py',
+   'PYMODULE'),
+  ('ctypes.macholib',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ctypes\\macholib\\__init__.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dyld',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ctypes\\macholib\\dyld.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dylib',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ctypes\\macholib\\dylib.py',
+   'PYMODULE'),
+  ('ctypes.macholib.framework',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ctypes\\macholib\\framework.py',
+   'PYMODULE'),
+  ('ctypes.util',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ctypes\\util.py',
+   'PYMODULE'),
+  ('ctypes.wintypes',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ctypes\\wintypes.py',
+   'PYMODULE'),
+  ('dataclasses',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\dataclasses.py',
+   'PYMODULE'),
+  ('datetime',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\datetime.py',
+   'PYMODULE'),
+  ('decimal',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\decimal.py',
+   'PYMODULE'),
+  ('difflib',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\difflib.py',
+   'PYMODULE'),
+  ('dis',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\dis.py',
+   'PYMODULE'),
+  ('doctest',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\doctest.py',
+   'PYMODULE'),
+  ('email',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\__init__.py',
+   'PYMODULE'),
+  ('email._encoded_words',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\_encoded_words.py',
+   'PYMODULE'),
+  ('email._header_value_parser',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\_header_value_parser.py',
+   'PYMODULE'),
+  ('email._parseaddr',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\_parseaddr.py',
+   'PYMODULE'),
+  ('email._policybase',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\_policybase.py',
+   'PYMODULE'),
+  ('email.base64mime',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\base64mime.py',
+   'PYMODULE'),
+  ('email.charset',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\charset.py',
+   'PYMODULE'),
+  ('email.contentmanager',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\contentmanager.py',
+   'PYMODULE'),
+  ('email.encoders',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\encoders.py',
+   'PYMODULE'),
+  ('email.errors',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\errors.py',
+   'PYMODULE'),
+  ('email.feedparser',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\feedparser.py',
+   'PYMODULE'),
+  ('email.generator',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\generator.py',
+   'PYMODULE'),
+  ('email.header',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\header.py',
+   'PYMODULE'),
+  ('email.headerregistry',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\headerregistry.py',
+   'PYMODULE'),
+  ('email.iterators',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\iterators.py',
+   'PYMODULE'),
+  ('email.message',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\message.py',
+   'PYMODULE'),
+  ('email.parser',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\parser.py',
+   'PYMODULE'),
+  ('email.policy',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\policy.py',
+   'PYMODULE'),
+  ('email.quoprimime',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\quoprimime.py',
+   'PYMODULE'),
+  ('email.utils',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\utils.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\fnmatch.py',
+   'PYMODULE'),
+  ('fractions',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\fractions.py',
+   'PYMODULE'),
+  ('ftplib',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ftplib.py',
+   'PYMODULE'),
+  ('gameScripts', '-', 'PYMODULE'),
+  ('gameScripts.dialogueView',
+   'C:\\Users\\Guido e '
+   'Ageu\\Documents\\GitHub\\Project-Historiae-Beta\\.venv\\gameScripts\\dialogueView.py',
+   'PYMODULE'),
+  ('gameScripts.entities',
+   'C:\\Users\\Guido e '
+   'Ageu\\Documents\\GitHub\\Project-Historiae-Beta\\.venv\\gameScripts\\entities.py',
+   'PYMODULE'),
+  ('gameScripts.objects',
+   'C:\\Users\\Guido e '
+   'Ageu\\Documents\\GitHub\\Project-Historiae-Beta\\.venv\\gameScripts\\objects.py',
+   'PYMODULE'),
+  ('gameScripts.tilemap',
+   'C:\\Users\\Guido e '
+   'Ageu\\Documents\\GitHub\\Project-Historiae-Beta\\.venv\\gameScripts\\tilemap.py',
+   'PYMODULE'),
+  ('gameScripts.utils',
+   'C:\\Users\\Guido e '
+   'Ageu\\Documents\\GitHub\\Project-Historiae-Beta\\.venv\\gameScripts\\utils.py',
+   'PYMODULE'),
+  ('getopt',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\getopt.py',
+   'PYMODULE'),
+  ('getpass',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\getpass.py',
+   'PYMODULE'),
+  ('gettext',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\gettext.py',
+   'PYMODULE'),
+  ('glob',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\glob.py',
+   'PYMODULE'),
+  ('gzip',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\gzip.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\hashlib.py',
+   'PYMODULE'),
+  ('hmac',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\hmac.py',
+   'PYMODULE'),
+  ('html',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\html\\__init__.py',
+   'PYMODULE'),
+  ('html.entities',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\html\\entities.py',
+   'PYMODULE'),
+  ('html.parser',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\html\\parser.py',
+   'PYMODULE'),
+  ('http',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\http\\__init__.py',
+   'PYMODULE'),
+  ('http.client',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\http\\client.py',
+   'PYMODULE'),
+  ('http.cookiejar',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\http\\cookiejar.py',
+   'PYMODULE'),
+  ('http.server',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\http\\server.py',
+   'PYMODULE'),
+  ('i18n',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\i18n\\__init__.py',
+   'PYMODULE'),
+  ('i18n.config',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\i18n\\config.py',
+   'PYMODULE'),
+  ('i18n.loaders',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\i18n\\loaders\\__init__.py',
+   'PYMODULE'),
+  ('i18n.loaders.json_loader',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\i18n\\loaders\\json_loader.py',
+   'PYMODULE'),
+  ('i18n.loaders.loader',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\i18n\\loaders\\loader.py',
+   'PYMODULE'),
+  ('i18n.loaders.python_loader',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\i18n\\loaders\\python_loader.py',
+   'PYMODULE'),
+  ('i18n.loaders.yaml_loader',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\i18n\\loaders\\yaml_loader.py',
+   'PYMODULE'),
+  ('i18n.resource_loader',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\i18n\\resource_loader.py',
+   'PYMODULE'),
+  ('i18n.translations',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\i18n\\translations.py',
+   'PYMODULE'),
+  ('i18n.translator',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\i18n\\translator.py',
+   'PYMODULE'),
+  ('importlib',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\__init__.py',
+   'PYMODULE'),
+  ('importlib._abc',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\_abc.py',
+   'PYMODULE'),
+  ('importlib._bootstrap',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\_bootstrap.py',
+   'PYMODULE'),
+  ('importlib._bootstrap_external',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\_bootstrap_external.py',
+   'PYMODULE'),
+  ('importlib.abc',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('importlib.metadata',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\__init__.py',
+   'PYMODULE'),
+  ('importlib.metadata._adapters',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.metadata._collections',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_collections.py',
+   'PYMODULE'),
+  ('importlib.metadata._functools',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_functools.py',
+   'PYMODULE'),
+  ('importlib.metadata._itertools',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.metadata._meta',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_meta.py',
+   'PYMODULE'),
+  ('importlib.metadata._text',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_text.py',
+   'PYMODULE'),
+  ('importlib.readers',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\readers.py',
+   'PYMODULE'),
+  ('importlib.resources',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\__init__.py',
+   'PYMODULE'),
+  ('importlib.resources._adapters',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.resources._common',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\_common.py',
+   'PYMODULE'),
+  ('importlib.resources._itertools',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.resources._legacy',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\_legacy.py',
+   'PYMODULE'),
+  ('importlib.resources.abc',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\abc.py',
+   'PYMODULE'),
+  ('importlib.resources.readers',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\readers.py',
+   'PYMODULE'),
+  ('importlib.util',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\util.py',
+   'PYMODULE'),
+  ('inspect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\inspect.py',
+   'PYMODULE'),
+  ('ipaddress',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ipaddress.py',
+   'PYMODULE'),
+  ('json',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\__init__.py',
+   'PYMODULE'),
+  ('json.decoder',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\decoder.py',
+   'PYMODULE'),
+  ('json.encoder',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py',
+   'PYMODULE'),
+  ('json.scanner',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\scanner.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('lzma',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\lzma.py',
+   'PYMODULE'),
+  ('mimetypes',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\mimetypes.py',
+   'PYMODULE'),
+  ('mouseinfo',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\mouseinfo\\__init__.py',
+   'PYMODULE'),
+  ('multiprocessing',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\__init__.py',
+   'PYMODULE'),
+  ('multiprocessing.connection',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\connection.py',
+   'PYMODULE'),
+  ('multiprocessing.context',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\context.py',
+   'PYMODULE'),
+  ('multiprocessing.dummy',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\dummy\\__init__.py',
+   'PYMODULE'),
+  ('multiprocessing.dummy.connection',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\dummy\\connection.py',
+   'PYMODULE'),
+  ('multiprocessing.forkserver',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\forkserver.py',
+   'PYMODULE'),
+  ('multiprocessing.heap',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\heap.py',
+   'PYMODULE'),
+  ('multiprocessing.managers',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\managers.py',
+   'PYMODULE'),
+  ('multiprocessing.pool',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\pool.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_fork',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\popen_fork.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_forkserver',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\popen_forkserver.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_spawn_posix',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\popen_spawn_posix.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_spawn_win32',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\popen_spawn_win32.py',
+   'PYMODULE'),
+  ('multiprocessing.process',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\process.py',
+   'PYMODULE'),
+  ('multiprocessing.queues',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\queues.py',
+   'PYMODULE'),
+  ('multiprocessing.reduction',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\reduction.py',
+   'PYMODULE'),
+  ('multiprocessing.resource_sharer',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\resource_sharer.py',
+   'PYMODULE'),
+  ('multiprocessing.resource_tracker',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\resource_tracker.py',
+   'PYMODULE'),
+  ('multiprocessing.shared_memory',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\shared_memory.py',
+   'PYMODULE'),
+  ('multiprocessing.sharedctypes',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\sharedctypes.py',
+   'PYMODULE'),
+  ('multiprocessing.spawn',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\spawn.py',
+   'PYMODULE'),
+  ('multiprocessing.synchronize',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\synchronize.py',
+   'PYMODULE'),
+  ('multiprocessing.util',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\util.py',
+   'PYMODULE'),
+  ('netrc',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\netrc.py',
+   'PYMODULE'),
+  ('nturl2path',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\nturl2path.py',
+   'PYMODULE'),
+  ('numbers',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\numbers.py',
+   'PYMODULE'),
+  ('opcode',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\opcode.py',
+   'PYMODULE'),
+  ('pathlib',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pathlib.py',
+   'PYMODULE'),
+  ('pdb',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pdb.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pickle.py',
+   'PYMODULE'),
+  ('pkgutil',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pkgutil.py',
+   'PYMODULE'),
+  ('platform',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\platform.py',
+   'PYMODULE'),
+  ('pprint',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pprint.py',
+   'PYMODULE'),
+  ('py_compile',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\py_compile.py',
+   'PYMODULE'),
+  ('pyautogui',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pyautogui\\__init__.py',
+   'PYMODULE'),
+  ('pyautogui._pyautogui_osx',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pyautogui\\_pyautogui_osx.py',
+   'PYMODULE'),
+  ('pyautogui._pyautogui_win',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pyautogui\\_pyautogui_win.py',
+   'PYMODULE'),
+  ('pyautogui._pyautogui_x11',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pyautogui\\_pyautogui_x11.py',
+   'PYMODULE'),
+  ('pydoc',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pydoc.py',
+   'PYMODULE'),
+  ('pydoc_data',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pydoc_data\\__init__.py',
+   'PYMODULE'),
+  ('pydoc_data.topics',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pydoc_data\\topics.py',
+   'PYMODULE'),
+  ('pygame',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\__init__.py',
+   'PYMODULE'),
+  ('pygame._data_classes',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\_data_classes.py',
+   'PYMODULE'),
+  ('pygame._debug',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\_debug.py',
+   'PYMODULE'),
+  ('pygame._sdl2',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\_sdl2\\__init__.py',
+   'PYMODULE'),
+  ('pygame.colordict',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\colordict.py',
+   'PYMODULE'),
+  ('pygame.cursors',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\cursors.py',
+   'PYMODULE'),
+  ('pygame.freetype',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\freetype.py',
+   'PYMODULE'),
+  ('pygame.ftfont',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\ftfont.py',
+   'PYMODULE'),
+  ('pygame.macosx',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\macosx.py',
+   'PYMODULE'),
+  ('pygame.pkgdata',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\pkgdata.py',
+   'PYMODULE'),
+  ('pygame.sndarray',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\sndarray.py',
+   'PYMODULE'),
+  ('pygame.sprite',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\sprite.py',
+   'PYMODULE'),
+  ('pygame.surfarray',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\surfarray.py',
+   'PYMODULE'),
+  ('pygame.sysfont',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\sysfont.py',
+   'PYMODULE'),
+  ('pygame.typing',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\typing.py',
+   'PYMODULE'),
+  ('pygame.version',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\version.py',
+   'PYMODULE'),
+  ('pygame_gui',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui._constants',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\_constants.py',
+   'PYMODULE'),
+  ('pygame_gui.core',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.core.colour_gradient',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\colour_gradient.py',
+   'PYMODULE'),
+  ('pygame_gui.core.colour_parser',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\colour_parser.py',
+   'PYMODULE'),
+  ('pygame_gui.core.drawable_shapes',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\drawable_shapes\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.core.drawable_shapes.drawable_shape',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\drawable_shapes\\drawable_shape.py',
+   'PYMODULE'),
+  ('pygame_gui.core.drawable_shapes.ellipse_drawable_shape',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\drawable_shapes\\ellipse_drawable_shape.py',
+   'PYMODULE'),
+  ('pygame_gui.core.drawable_shapes.rect_drawable_shape',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\drawable_shapes\\rect_drawable_shape.py',
+   'PYMODULE'),
+  ('pygame_gui.core.drawable_shapes.rounded_rect_drawable_shape',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\drawable_shapes\\rounded_rect_drawable_shape.py',
+   'PYMODULE'),
+  ('pygame_gui.core.gui_font_freetype',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\gui_font_freetype.py',
+   'PYMODULE'),
+  ('pygame_gui.core.gui_font_pygame',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\gui_font_pygame.py',
+   'PYMODULE'),
+  ('pygame_gui.core.gui_type_hints',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\gui_type_hints.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.appearance_theme_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\appearance_theme_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.colour_gradient_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\colour_gradient_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.container_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\container_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.element_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\element_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.font_dictionary_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\font_dictionary_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.gui_font_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\gui_font_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.gui_sprite_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\gui_sprite_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.manager_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\manager_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.text_owner_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\text_owner_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.tool_tip_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\tool_tip_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.window_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\window_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.window_stack_interface',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\interfaces\\window_stack_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.layered_gui_group',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\layered_gui_group.py',
+   'PYMODULE'),
+  ('pygame_gui.core.object_id',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\object_id.py',
+   'PYMODULE'),
+  ('pygame_gui.core.resource_loaders',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\resource_loaders.py',
+   'PYMODULE'),
+  ('pygame_gui.core.surface_cache',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\surface_cache.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.horiz_rule_layout_rect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\horiz_rule_layout_rect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.html_parser',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\html_parser.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.hyperlink_text_chunk',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\hyperlink_text_chunk.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.image_layout_rect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\image_layout_rect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.line_break_layout_rect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\line_break_layout_rect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.simple_test_layout_rect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\simple_test_layout_rect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_box_layout',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_box_layout.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_box_layout_row',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_box_layout_row.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_effects\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.bounce_effect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_effects\\bounce_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.expand_contract_effect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_effects\\expand_contract_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.fade_in_effect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_effects\\fade_in_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.fade_out_effect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_effects\\fade_out_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.shake_effect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_effects\\shake_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.text_effect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_effects\\text_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.tilt_effect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_effects\\tilt_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.typing_appear_effect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_effects\\typing_appear_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_layout_rect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_layout_rect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_line_chunk',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\text\\text_line_chunk.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_appearance_theme',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\ui_appearance_theme.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_container',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\ui_container.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_element',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\ui_element.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_font_dictionary',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\ui_font_dictionary.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_shadow',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\ui_shadow.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_window_stack',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\ui_window_stack.py',
+   'PYMODULE'),
+  ('pygame_gui.core.utility',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\core\\utility.py',
+   'PYMODULE'),
+  ('pygame_gui.data',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\data\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.elements',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_2d_slider',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_2d_slider.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_auto_resizing_container',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_auto_resizing_container.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_button',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_button.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_drop_down_menu',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_drop_down_menu.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_form',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_form.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_horizontal_scroll_bar',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_horizontal_scroll_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_horizontal_slider',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_horizontal_slider.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_image',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_image.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_label',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_label.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_panel',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_panel.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_progress_bar',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_progress_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_screen_space_health_bar',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_screen_space_health_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_scrolling_container',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_scrolling_container.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_selection_list',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_selection_list.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_status_bar',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_status_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_tab_container',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_tab_container.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_text_box',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_text_box.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_text_entry_box',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_text_entry_box.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_text_entry_line',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_text_entry_line.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_tool_tip',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_tool_tip.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_vertical_scroll_bar',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_vertical_scroll_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_window',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_window.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_world_space_health_bar',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\elements\\ui_world_space_health_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.ui_manager',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\ui_manager.py',
+   'PYMODULE'),
+  ('pygame_gui.windows',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\windows\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.windows.ui_colour_picker_dialog',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\windows\\ui_colour_picker_dialog.py',
+   'PYMODULE'),
+  ('pygame_gui.windows.ui_confirmation_dialog',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\windows\\ui_confirmation_dialog.py',
+   'PYMODULE'),
+  ('pygame_gui.windows.ui_console_window',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\windows\\ui_console_window.py',
+   'PYMODULE'),
+  ('pygame_gui.windows.ui_file_dialog',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\windows\\ui_file_dialog.py',
+   'PYMODULE'),
+  ('pygame_gui.windows.ui_message_window',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame_gui\\windows\\ui_message_window.py',
+   'PYMODULE'),
+  ('pygetwindow',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygetwindow\\__init__.py',
+   'PYMODULE'),
+  ('pygetwindow._pygetwindow_macos',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygetwindow\\_pygetwindow_macos.py',
+   'PYMODULE'),
+  ('pygetwindow._pygetwindow_win',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygetwindow\\_pygetwindow_win.py',
+   'PYMODULE'),
+  ('pymsgbox',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pymsgbox\\__init__.py',
+   'PYMODULE'),
+  ('pymsgbox._native_win',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pymsgbox\\_native_win.py',
+   'PYMODULE'),
+  ('pyperclip',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pyperclip\\__init__.py',
+   'PYMODULE'),
+  ('pyrect',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pyrect\\__init__.py',
+   'PYMODULE'),
+  ('pyscreeze',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pyscreeze\\__init__.py',
+   'PYMODULE'),
+  ('pytweening',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pytweening\\__init__.py',
+   'PYMODULE'),
+  ('queue',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\queue.py',
+   'PYMODULE'),
+  ('quopri',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\quopri.py',
+   'PYMODULE'),
+  ('random',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\random.py',
+   'PYMODULE'),
+  ('runpy',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\runpy.py',
+   'PYMODULE'),
+  ('secrets',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\secrets.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\selectors.py',
+   'PYMODULE'),
+  ('shlex',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\shlex.py',
+   'PYMODULE'),
+  ('shutil',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\shutil.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\signal.py',
+   'PYMODULE'),
+  ('socket',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\socket.py',
+   'PYMODULE'),
+  ('socketserver',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\socketserver.py',
+   'PYMODULE'),
+  ('ssl',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ssl.py',
+   'PYMODULE'),
+  ('statistics',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\statistics.py',
+   'PYMODULE'),
+  ('string',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\string.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\stringprep.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py',
+   'PYMODULE'),
+  ('sysconfig',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\sysconfig.py',
+   'PYMODULE'),
+  ('tarfile',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tarfile.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tempfile.py',
+   'PYMODULE'),
+  ('textwrap',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\textwrap.py',
+   'PYMODULE'),
+  ('threading',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\threading.py',
+   'PYMODULE'),
+  ('tkinter',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tkinter\\__init__.py',
+   'PYMODULE'),
+  ('tkinter.constants',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tkinter\\constants.py',
+   'PYMODULE'),
+  ('tkinter.ttk',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tkinter\\ttk.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\token.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tokenize.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('tty',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tty.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\typing.py',
+   'PYMODULE'),
+  ('unittest',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\__init__.py',
+   'PYMODULE'),
+  ('unittest._log',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\_log.py',
+   'PYMODULE'),
+  ('unittest.async_case',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\async_case.py',
+   'PYMODULE'),
+  ('unittest.case',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\case.py',
+   'PYMODULE'),
+  ('unittest.loader',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\loader.py',
+   'PYMODULE'),
+  ('unittest.main',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\main.py',
+   'PYMODULE'),
+  ('unittest.result',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\result.py',
+   'PYMODULE'),
+  ('unittest.runner',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\runner.py',
+   'PYMODULE'),
+  ('unittest.signals',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\signals.py',
+   'PYMODULE'),
+  ('unittest.suite',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\suite.py',
+   'PYMODULE'),
+  ('unittest.util',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\util.py',
+   'PYMODULE'),
+  ('urllib',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\urllib\\__init__.py',
+   'PYMODULE'),
+  ('urllib.error',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\urllib\\error.py',
+   'PYMODULE'),
+  ('urllib.parse',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\urllib\\parse.py',
+   'PYMODULE'),
+  ('urllib.request',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\urllib\\request.py',
+   'PYMODULE'),
+  ('urllib.response',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\urllib\\response.py',
+   'PYMODULE'),
+  ('webbrowser',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\webbrowser.py',
+   'PYMODULE'),
+  ('xml',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\__init__.py',
+   'PYMODULE'),
+  ('xml.parsers',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\parsers\\__init__.py',
+   'PYMODULE'),
+  ('xml.parsers.expat',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\parsers\\expat.py',
+   'PYMODULE'),
+  ('xml.sax',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\sax\\__init__.py',
+   'PYMODULE'),
+  ('xml.sax._exceptions',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\sax\\_exceptions.py',
+   'PYMODULE'),
+  ('xml.sax.expatreader',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\sax\\expatreader.py',
+   'PYMODULE'),
+  ('xml.sax.handler',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\sax\\handler.py',
+   'PYMODULE'),
+  ('xml.sax.saxutils',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\sax\\saxutils.py',
+   'PYMODULE'),
+  ('xml.sax.xmlreader',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\sax\\xmlreader.py',
+   'PYMODULE'),
+  ('xmlrpc',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xmlrpc\\__init__.py',
+   'PYMODULE'),
+  ('xmlrpc.client',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xmlrpc\\client.py',
+   'PYMODULE'),
+  ('zipfile',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\zipfile\\__init__.py',
+   'PYMODULE'),
+  ('zipfile.__main__',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\zipfile\\__main__.py',
+   'PYMODULE'),
+  ('zipfile._path',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\zipfile\\_path\\__init__.py',
+   'PYMODULE'),
+  ('zipfile._path.glob',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\zipfile\\_path\\glob.py',
+   'PYMODULE'),
+  ('zipimport',
+   'C:\\Users\\Guido e '
+   'Ageu\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\zipimport.py',
+   'PYMODULE')])

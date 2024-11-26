@@ -60,7 +60,7 @@ class Game:
             # bkgs
             'backgroundathens1' : load_image('backgrounds/athens1.png'),
             'backgroundathens2' : load_image('backgrounds/athens2.png'),
-            'backgroundathens3' : load_image('backgrounds/athens3.png') # trocar
+            'backgroundathens3' : load_image('backgrounds/athens3.png'),
         }
 
         self.clock = pygame.time.Clock()
@@ -406,7 +406,7 @@ class Game:
 
             self.display.blit(self.assets['bkgMenu'])
 
-            text = f'Thanks for playing! >:D\nYour score was {self.correctQuestions}.'
+            text = f'Thanks for playing!\nYour score was {self.correctQuestions}/{self.maxQuestions}.'
             font = pygame.freetype.SysFont("Monocraft", 24) if pyautogui.size()[0] >= 1920 else pygame.freetype.SysFont("Monocraft", 16)
             tempFont = pygame.font.Font(".venv/fonts/Monocraft.otf", 24) if pyautogui.size()[0] >= 1920 else pygame.font.Font(".venv/fonts/Monocraft.otf", 16)
 
